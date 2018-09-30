@@ -1,0 +1,96 @@
+.erp-header {
+  position: relative;
+  display: flex;
+  flex: 0 0 auto;
+  z-index: 4;
+
+  mat-toolbar {
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    padding: 0;
+
+    .erp-header_wrapper {
+      height: 100%;
+      margin: 0px;
+      width: 100%;
+      flex-direction: row;
+      box-sizing: border-box;
+      display: flex;
+      place-content: center flex-start;
+      align-items: center;
+      flex: 1 1 0%;
+
+      .erp-header_shortcuts {
+        flex: 1 0 auto;
+        box-sizing: border-box;
+        flex-direction: row;
+        display: flex;
+        place-content: center flex-start;
+        align-items: center;
+        padding: 0 0px 0 16px;
+
+      }
+
+      .erp-header_toolbox {
+        flex: 0 1 auto;
+        box-sizing: border-box;
+        flex-direction: row;
+        display: flex;
+        place-content: center flex-start;
+        align-items: center;
+
+        .erp-header_user-button {
+          min-width: 64px;
+          height: 64px;
+
+          .wrapper {
+            flex-direction: row;
+            box-sizing: border-box;
+            display: flex;
+            max-height: 100%;
+            place-content: center;
+            align-items: center;
+
+            .avatar {
+              width: 40px;
+              min-width: 40px;
+              height: 40px;
+              line-height: 40px;
+              margin: 0 16px 0 0;
+              border-radius: 50%;
+              font-size: 17px;
+              font-weight: 500;
+              text-align: center;
+            }
+
+            .username {
+              display: block;
+              margin: 0 12px 0 0;
+            }
+
+            &>span {
+              display: block;
+            }
+          }
+        }
+
+        .language-button {
+          min-width: 64px;
+          height: 64px;
+        }
+
+        .quick-panel-toggle-button {
+          min-width: 64px;
+          height: 64px;
+        }
+
+        .toolbar-separator {
+          background: rgba(0, 0, 0, 0.2);
+          height: 64px;
+          width: 1px;
+        }
+      }
+    }
+  }
+}

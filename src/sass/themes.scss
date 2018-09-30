@@ -1,0 +1,36 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+@mixin global-theme ($theme) {
+  $primary: map-get($theme, primary );
+  $accent: map-get($theme, accent );
+  $warn: map-get($theme, warn );
+  $foreground: map-get($theme, foreground );
+  $background: map-get($theme, background );
+
+  .content {
+    background-color: mat-color($background, background);
+    color: mat-color($foreground, text);
+  }
+}
+
+$default-primary: mat-palette($mat-deep-purple, 600);
+$default-accent:  mat-palette($mat-orange, A200, A100, A400);
+$default-warn:    mat-palette($mat-red);
+$default-theme: mat-light-theme($default-primary, $default-accent, $default-warn);
+
+$dark-primary: mat-palette($mat-blue-grey);
+$dark-accent:  mat-palette($mat-amber, A200, A100, A400);
+$dark-warn:    mat-palette($mat-deep-orange);
+$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+.default-theme {
+  @include angular-material-theme($default-theme);
+  @include global-theme($default-theme);
+}
+
+.dark-theme {
+  @include angular-material-theme($dark-theme);
+  @include global-theme($dark-theme);
+}
+

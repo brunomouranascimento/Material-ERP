@@ -1,0 +1,95 @@
+<div class="erp-header">
+  <mat-toolbar color="primary">
+    <div class="erp-header_wrapper" fxfill fxflex fxlayout="row" fxlayoutalign="start center">
+
+      <div class="erp-header_shortcuts" fxflex="1 0 auto" fxlayout="row" fxlayoutalign="start center">
+        <span></span>
+        <button mat-icon-button matTooltip="Clique para adicionar ou remover atalhos" [matMenuTriggerFor]="shortcuts"
+          aria-describedby="message">
+          <mat-icon role="img" aria-hidden="true">local_play</mat-icon>
+        </button>
+        <mat-menu class="w-240" #shortcuts="matMenu">
+          <mat-form-field class="px-16 w-100-p" appearance="outline" (click)="$event.stopPropagation();">
+            <mat-label>Adicionar novo atalho</mat-label>
+            <input matInput placeholder="Buscar">
+            <span matSuffix>
+              <mat-icon class="mat-18">search</mat-icon>
+            </span>
+          </mat-form-field>
+          <mat-divider mat-divider-horizontal role="separator" aria-orientation="horizontal"></mat-divider>
+          <mat-nav-list>
+            <mat-list-item style="justify-content: center">
+              <p>
+                <small>Nenhum atalho adicionado</small>
+              </p>
+            </mat-list-item>
+          </mat-nav-list>
+        </mat-menu>
+      </div>
+
+      <div class="erp-header_toolbox" fxflex="0 1 auto" fxlayout="row" fxlayoutalign="start center">
+        <button aria-haspopup="true" class="erp-header_user-button" mat-button [matMenuTriggerFor]="userSettings">
+          <div class="wrapper" fxlayout="row" fxlayoutalign="center center">
+            <img class="avatar" src="assets/images/avatars/bruno.jpg">
+            <span class="username" fxhide fxshow.gt-sm>
+              Bruno Nascimento
+            </span>
+            <mat-icon class="mat-icon material-icons" fxhide.xs role="img" aria-hidden="true" style="display: block;">keyboard_arrow_down</mat-icon>
+          </div>
+        </button>
+        <mat-menu #userSettings="matMenu" [overlapTrigger]="false" xPosition="before">
+          <button mat-menu-item role="menuitem" tabindex="0" aria-disabled="false">
+            <mat-icon class="mat-icon material-icons" role="img" aria-hidden="true">account_circle</mat-icon>
+            <span>Meu perfil</span>
+          </button>
+          <button mat-menu-item role="menuitem" tabindex="0" aria-disabled="false" [matMenuTriggerFor]="themes">
+            <mat-icon class="mat-icon material-icons" role="img" aria-hidden="true">color_lens</mat-icon>
+            <span>Temas</span>
+          </button>
+          <mat-menu #themes="matMenu">
+            <button mat-menu-item (click)="changeTheme('default')" style="padding-right: 0">Purple</button>
+            <button mat-menu-item (click)="changeTheme('dark')" style="padding-right: 0">Dark</button>
+          </mat-menu>
+          <button mat-menu-item role="menuitem" tabindex="0" aria-disabled="false">
+            <mat-icon class="mat-icon material-icons" role="img" aria-hidden="true">settings</mat-icon>
+            <span>Configurações</span>
+          </button>
+          <button mat-menu-item role="menuitem" tabindex="0" aria-disabled="false">
+            <mat-icon class="mat-icon material-icons" role="img" aria-hidden="true">power_settings_new</mat-icon>
+            <span>Sair</span>
+          </button>
+        </mat-menu>
+
+        <div class="toolbar-separator"></div>
+
+        <button aria-haspopup="true" class="language-button" fxhide fxshow.gt-xs mat-button style="display: block;"
+          [matMenuTriggerFor]="language">
+            <div class="language-selected" fxlayout="row" fxlayoutalign="center center">
+              <img class="flag mr-8" src="assets/images/flags/br.png">
+              <span class="iso text-uppercase">PT</span>
+            </div>
+        </button>
+        <mat-menu #language="matMenu" [overlapTrigger]="false">
+          <button class="mat-menu-item" mat-menu-item role="menuitem" tabindex="0" aria-disabled="false">
+            <span class="flag" fxlayout="row" fxlayoutalign="start center">
+              <img class="mr-16" src="assets/images/flags/us.png">
+              <span class="iso">English</span>
+            </span>
+          </button>
+          <button class="mat-menu-item" mat-menu-item role="menuitem" tabindex="0" aria-disabled="false">
+            <span class="flag" fxlayout="row" fxlayoutalign="start center">
+              <img class="flag mr-16" src="assets/images/flags/spa.png">
+              <span class="iso">Español</span>
+            </span>
+          </button>
+        </mat-menu>
+
+        <div class="toolbar-separator" fxhide="" fxshow.gt-xs="" style="display: block;"></div>
+
+        <button aria-label="Toggle quick panel" class="quick-panel-toggle-button mat-icon-button" mat-icon-button>
+            <mat-icon class="mat-icon material-icons" role="img" aria-hidden="true">format_list_bulleted</mat-icon>
+        </button>
+      </div>
+    </div>
+  </mat-toolbar>
+</div>

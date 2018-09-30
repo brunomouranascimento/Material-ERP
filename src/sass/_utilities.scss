@@ -1,0 +1,64 @@
+
+
+.default-theme .mat-form-field-appearance-outline .mat-form-field-outline,
+.dark-theme .mat-form-field-appearance-outline .mat-form-field-outline {
+  top: 0.5em;
+  bottom: 0.2em;
+}
+
+.default-theme .mat-form-field-wrapper,
+.dark-theme .mat-form-field-wrapper {
+  padding-bottom: 0.5em;
+}
+
+.mat-button .mat-button-wrapper>*,
+.mat-fab .mat-button-wrapper>*,
+.mat-flat-button .mat-button-wrapper>*,
+.mat-icon-button .mat-button-wrapper>*,
+.mat-mini-fab .mat-button-wrapper>*,
+.mat-raised-button .mat-button-wrapper>*,
+.mat-stroked-button .mat-button-wrapper>* {
+  vertical-align: middle;
+}
+
+.mat-button .mat-button-wrapper>.language-selected{
+  flex-direction: row;
+  box-sizing: border-box;
+  display: flex;
+  max-height: 100%;
+  place-content: center;
+  align-items: center
+}
+
+.default-theme .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+.mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label,
+.dark-theme .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+.mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label {
+  -webkit-transform: translateY(-1.59375em) scale(0.75);
+  transform: translateY(-1.55em) scale(0.75);
+  width: 133.33333333%;
+}
+
+.mr-8 {
+  margin-right: 8px;
+}
+
+.default-theme .mr-16,
+.dark-theme .mr-16 {
+  margin-right: 16px;
+}
+
+.px-16 {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.w-100-p {
+  width: 100%;
+}
+
+.w-240 {
+  width: 240px;
+  min-width: 240px;
+  max-width: 240px;
+}
