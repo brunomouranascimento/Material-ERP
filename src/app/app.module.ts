@@ -14,7 +14,6 @@ import { MatTooltipModule,
         } from '@angular/material';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { HeaderComponent } from './components/header/header.component';
-
 import { AlertModule } from 'ngx-bootstrap';
 
 @NgModule({

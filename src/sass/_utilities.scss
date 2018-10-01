@@ -1,4 +1,7 @@
-
+.default-theme .mat-menu-item,
+.dark-theme .mat-menu-item {
+  font-family: 'Dosis Regular', Helvetica, Arial, sans-serif;
+}
 
 .default-theme .mat-form-field-appearance-outline .mat-form-field-outline,
 .dark-theme .mat-form-field-appearance-outline .mat-form-field-outline {

@@ -7,7 +7,7 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "mat",
+      "prefix": "erp",
       "schematics": {
         "@schematics/angular:component": {
           "styleext": "scss"

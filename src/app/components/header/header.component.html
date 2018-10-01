@@ -34,7 +34,7 @@
             <span class="username" fxhide fxshow.gt-sm>
               Bruno Nascimento
             </span>
-            <mat-icon class="mat-icon material-icons" fxhide.xs role="img" aria-hidden="true" style="display: block;">keyboard_arrow_down</mat-icon>
+            <mat-icon class="mat-icon material-icons" fxhide.xs role="img" aria-hidden="true">keyboard_arrow_down</mat-icon>
           </div>
         </button>
         <mat-menu #userSettings="matMenu" [overlapTrigger]="false" xPosition="before">
@@ -62,12 +62,12 @@
 
         <div class="toolbar-separator"></div>
 
-        <button aria-haspopup="true" class="language-button" fxhide fxshow.gt-xs mat-button style="display: block;"
+        <button aria-haspopup="true" class="language-button" fxhide fxshow.gt-xs mat-button
           [matMenuTriggerFor]="language">
-            <div class="language-selected" fxlayout="row" fxlayoutalign="center center">
-              <img class="flag mr-8" src="assets/images/flags/br.png">
-              <span class="iso text-uppercase">PT</span>
-            </div>
+          <div class="language-selected" fxlayout="row" fxlayoutalign="center center">
+            <img class="flag mr-8" src="assets/images/flags/br.png">
+            <span class="iso text-uppercase">PT</span>
+          </div>
         </button>
         <mat-menu #language="matMenu" [overlapTrigger]="false">
           <button class="mat-menu-item" mat-menu-item role="menuitem" tabindex="0" aria-disabled="false">
@@ -84,12 +84,19 @@
           </button>
         </mat-menu>
 
-        <div class="toolbar-separator" fxhide="" fxshow.gt-xs="" style="display: block;"></div>
+        <div class="toolbar-separator" fxhide fxshow.gt-xs></div>
 
-        <button aria-label="Toggle quick panel" class="quick-panel-toggle-button mat-icon-button" mat-icon-button>
-            <mat-icon class="mat-icon material-icons" role="img" aria-hidden="true">format_list_bulleted</mat-icon>
+        <button aria-label="Toggle quick panel" class="notification-center mat-icon-button" mat-icon-button (click)="toggleNotificationCenter()">
+          <mat-icon class="mat-icon material-icons" role="img" aria-hidden="true">format_list_bulleted</mat-icon>
+
         </button>
+        <div [ngClass]="{active: isActive}" class="notification-panel">
+          <ul class="notification-list">
+            <span>{{now}}</span>
+          </ul>
+        </div>
       </div>
     </div>
   </mat-toolbar>
+  <div [ngClass]="{open: isActive}" class="notification-overlay" (click)="toggleNotificationCenter()" color="primary"></div>
 </div>

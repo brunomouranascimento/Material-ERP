@@ -80,17 +80,71 @@
           height: 64px;
         }
 
-        .quick-panel-toggle-button {
+        .notification-center {
           min-width: 64px;
           height: 64px;
+
         }
 
-        .toolbar-separator {
-          background: rgba(0, 0, 0, 0.2);
-          height: 64px;
-          width: 1px;
+        .notification-panel {
+          margin: 0;
+          padding: 15px;
+          list-style: none;
+          background-color: #FAFAFA;
+          color: gray;
+          height: 100%;
+          right: -350px;
+          top: 0;
+          width: 350px;
+          overflow-y: auto;
+          z-index: 10000;
+          -moz-transition: 0.3s ease-in-out;
+          -o-transition: 0.3s ease-in-out;
+          -webkit-transition: 6s ease-in-out;
+          transition: 0.3s ease-in-out;
+          position: fixed;
+          opacity: 0;
+
+          .notification-list {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+          }
         }
+
+        .active {
+          -o-transform: translate(-350px, 0);
+          -moz-transform: translate(-350px, 0);
+          -ms-transform: translate(-350px, 0);
+          -webkit-transform: translate(-350px, 0);
+          transform: translate(-350px, 0);
+          opacity: 1;
+
+        }
+      }
+
+      .toolbar-separator {
+        background: rgba(0, 0, 0, 0.2);
+        height: 64px;
+        width: 1px;
       }
     }
   }
+}
+
+.notification-overlay {
+  height: 100vh;
+  width: 100vw;
+  z-index: 9999;
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: opacity 0.5s, visibility 0s 0.5s;
+}
+
+.open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s;
 }
