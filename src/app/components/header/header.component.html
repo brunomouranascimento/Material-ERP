@@ -86,17 +86,11 @@
 
         <div class="toolbar-separator" fxhide fxshow.gt-xs></div>
 
-        <button aria-label="Toggle quick panel" class="notification-center mat-icon-button" mat-icon-button (click)="toggleNotificationCenter()">
+        <button aria-label="Toggle quick panel" class="notification-center" mat-icon-button (click)="toggleNotificationCenter(true)">
           <mat-icon class="mat-icon material-icons" role="img" aria-hidden="true">format_list_bulleted</mat-icon>
-
         </button>
-        <div [ngClass]="{active: isActive}" class="notification-panel">
-          <ul class="notification-list">
-            <span>{{now}}</span>
-          </ul>
-        </div>
+        <erp-notification-center [isActive]="notificationCenterOpened" (close)="onClose($event)"></erp-notification-center>
       </div>
     </div>
   </mat-toolbar>
-  <div [ngClass]="{open: isActive}" class="notification-overlay" (click)="toggleNotificationCenter()" color="primary"></div>
 </div>

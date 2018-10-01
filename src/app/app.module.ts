@@ -4,23 +4,26 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTooltipModule,
-        MatToolbarModule,
-        MatButtonModule, MatSidenavModule,
-        MatIconModule, MatListModule,
-        MatMenuModule,
-        MatFormFieldModule,
-        MatInputModule
-        } from '@angular/material';
+import {
+  MatTooltipModule,
+  MatToolbarModule,
+  MatButtonModule, MatSidenavModule,
+  MatIconModule, MatListModule,
+  MatMenuModule,
+  MatFormFieldModule,
+  MatInputModule
+} from '@angular/material';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AlertModule } from 'ngx-bootstrap';
+import { NotificationCenterComponent } from './components/header/notification-center/notification-center.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidenavComponent,
-    HeaderComponent
+    HeaderComponent,
+    NotificationCenterComponent
   ],
   imports: [
     BrowserModule,

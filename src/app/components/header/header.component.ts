@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'erp-header',
@@ -12,16 +11,9 @@ import { formatDate } from '@angular/common';
 })
 export class HeaderComponent implements OnInit {
 
-  dayName = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
-  monName = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Agosto', 'Outubro', 'Novembro', 'Dezembro'];
-  today = new Date();
-  now: string;
-  isActive = false;
+  notificationCenterOpened = false;
 
-  constructor(
-    private breakpointObserver: BreakpointObserver)  {
-      this.now = `${(this.dayName[this.today.getDay()])},
-      ${this.today.getDate()} de ${this.monName[this.today.getMonth()]} de ${this.today.getFullYear()}`;
+  constructor( private breakpointObserver: BreakpointObserver )  {
   }
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
@@ -37,9 +29,13 @@ export class HeaderComponent implements OnInit {
     document.body.classList.add(`${theme}-theme`);
   }
 
-  toggleNotificationCenter() {
-    this.isActive = !this.isActive;
-    console.log(this.isActive);
+
+  toggleNotificationCenter(open: boolean) {
+    this.notificationCenterOpened = open;
+  }
+
+  onClose(closeNotificationCenter: boolean) {
+    this.notificationCenterOpened = closeNotificationCenter;
   }
 
   ngOnInit() {

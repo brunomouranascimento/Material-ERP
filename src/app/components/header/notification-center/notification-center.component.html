@@ -1,0 +1,8 @@
+<div [ngClass]="{active: isActive}" class="notification-overlay" (click)="closeNotificationCenter(false)"></div>
+<div [ngClass]="{open: isActive}" class="erp-notification-center">
+  <ul class="notification-list">
+    <span>{{now}}</span>
+  </ul>
+</div>
+
+
