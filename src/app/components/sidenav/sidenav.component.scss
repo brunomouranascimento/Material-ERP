@@ -1,8 +1,14 @@
 .sidenav-container {
-  height: 100vh;
+  height: 100%;
+  font-weight: 600;
 }
 
 .sidenav {
   width: 200px;
   box-shadow: 3px 0 6px rgba($color: #000000, $alpha: 0.24)
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
 }

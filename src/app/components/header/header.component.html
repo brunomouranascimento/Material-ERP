@@ -2,13 +2,15 @@
   <mat-toolbar color="primary">
     <div class="erp-header_wrapper" fxfill fxflex fxlayout="row" fxlayoutalign="start center">
 
+      <ng-content></ng-content>
+
       <div class="erp-header_shortcuts" fxflex="1 0 auto" fxlayout="row" fxlayoutalign="start center">
         <span></span>
         <button mat-icon-button matTooltip="Clique para adicionar ou remover atalhos" [matMenuTriggerFor]="shortcuts"
           aria-describedby="message">
           <mat-icon role="img" aria-hidden="true">local_play</mat-icon>
         </button>
-        <mat-menu class="w-240" #shortcuts="matMenu">
+        <mat-menu class="w-240" #shortcuts="matMenu" [overlapTrigger]="false">
           <mat-form-field class="px-16 w-100-p" appearance="outline" (click)="$event.stopPropagation();">
             <mat-label>Adicionar novo atalho</mat-label>
             <input matInput placeholder="Buscar">
@@ -86,7 +88,7 @@
 
         <div class="toolbar-separator" fxhide fxshow.gt-xs></div>
 
-        <button aria-label="Toggle quick panel" class="notification-center" mat-icon-button (click)="toggleNotificationCenter(true)">
+        <button aria-label="Toggle quick panel" class="notification-center" matTooltip="Central de Notificações" mat-icon-button (click)="toggleNotificationCenter(true)">
           <mat-icon class="mat-icon material-icons" role="img" aria-hidden="true">format_list_bulleted</mat-icon>
         </button>
         <erp-notification-center [isActive]="notificationCenterOpened" (close)="onClose($event)"></erp-notification-center>

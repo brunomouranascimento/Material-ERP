@@ -32,7 +32,6 @@ export class NotificationCenterComponent implements OnInit {
 
   closeNotificationCenter(close: boolean) {
     this.close.emit(close);
-    console.log(close);
   }
 
   ngOnInit() {
