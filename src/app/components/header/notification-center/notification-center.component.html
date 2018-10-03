@@ -1,8 +1,30 @@
-<div [ngClass]="{active: isActive}" class="notification-overlay" (click)="closeNotificationCenter(false)"></div>
-<div [ngClass]="{open: isActive}" class="erp-notification-center">
-  <ul class="notification-list">
-    <span>{{now}}</span>
-  </ul>
+<div [ngClass]="{open: isActive}" class="erp-notification-center" color="primary">
+  <div class="erp-notification-center_wrapper">
+    <mat-tab-group>
+      <mat-tab class="today">
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">today</mat-icon>
+          Hoje
+        </ng-template>
+        <p class="now">{{now}}</p>
+      </mat-tab>
+
+      <mat-tab class="notifications">
+        <ng-template mat-tab-label>
+          <mat-icon class="example-tab-icon">notifications</mat-icon>
+          Notificações
+        </ng-template>
+        <div class="notifications-control">
+          <button mat-raised-button color="accent" (click)="dismissible = !dismissible">Toggle close</button>
+          <button mat-raised-button color="primary" (click)="reset()">Reset</button>
+          <button mat-raised-button color="warn" (click)="clear()">Limpar notificações</button>
+        </div>
+        <div *ngFor="let alert of alerts">
+          <alert [type]="alert.type" [dismissible]="dismissible" (onClosed)="onClosed(alert)">{{ alert.msg }}</alert>
+        </div>
+        <p *ngIf="!alerts.length" >Nenhuma notificação!</p>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
 </div>
-
-
+<div [ngClass]="{active: isActive}" class="notification-overlay" (click)="closeNotificationCenter(false)"></div>

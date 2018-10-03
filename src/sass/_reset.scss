@@ -1,5 +1,7 @@
 * {
   font-family: 'Dosis Regular', Helvetica, Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+
   &:active,
   :focus {
     outline: none !important; // 1

@@ -1,7 +1,52 @@
+@import "~src/sass/_mixins.scss";
+
+.erp-notification-center {
+  margin: 0;
+  padding: 15px;
+  list-style: none;
+  color: #FFFFFF;
+  box-shadow: -7px 1px 6px -2px rgba(0, 0, 0, 0.24);
+  height: 100%;
+  right: -30vw;
+  top: 0;
+  width: 30vw;
+  overflow-y: auto;
+  z-index: 4;
+  transition: 0.3s ease-in-out;
+  position: fixed;
+  opacity: 0;
+
+  @include smartphone {
+    right: -70vw;
+    width: 70vw;
+  }
+
+  .erp-notification-center_wrapper {
+    list-style: none;
+    white-space: normal;
+    height: 100%;
+
+    p:first-of-type {
+      padding-top: 15px;
+      font-size: 36px;
+      text-align: center;
+    }
+  }
+}
+
+.open {
+  transform: translate(-30vw, 0);
+  opacity: 1;
+
+  @include smartphone {
+    transform: translate(-70vw, 0);
+  }
+}
+
 .notification-overlay {
   height: 100vh;
   width: 100vw;
-  z-index: 9999;
+  z-index: 3;
   position: fixed;
   opacity: 0;
   visibility: hidden;
@@ -20,40 +65,12 @@
   position: fixed;
 }
 
-.erp-notification-center {
-  margin: 0;
-  padding: 15px;
-  list-style: none;
-  background-color: #FAFAFA;
-  color: gray;
-  -webkit-box-shadow: -7px 1px 6px -2px rgba(0, 0, 0, 0.24);
-  -moz-box-shadow: -7px 1px 6px -2px rgba(0, 0, 0, 0.24);
-  box-shadow: -7px 1px 6px -2px rgba(0, 0, 0, 0.24);
-  height: 100%;
-  right: -350px;
-  top: 0;
-  width: 350px;
-  overflow-y: auto;
-  z-index: 10000;
-  -moz-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
-  -webkit-transition: 6s ease-in-out;
-  transition: 0.3s ease-in-out;
-  position: fixed;
-  opacity: 0;
 
-  .notification-list {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
+.example-tab-icon {
+  margin-right: 8px;
 }
 
-.open {
-  -o-transform: translate(-350px, 0);
-  -moz-transform: translate(-350px, 0);
-  -ms-transform: translate(-350px, 0);
-  -webkit-transform: translate(-350px, 0);
-  transform: translate(-350px, 0);
-  opacity: 1;
+
+.notifications-control {
+  padding-bottom: 15px;
 }

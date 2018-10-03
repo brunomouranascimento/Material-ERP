@@ -11,7 +11,8 @@ import {
   MatIconModule, MatListModule,
   MatMenuModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatTabsModule
 } from '@angular/material';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -38,6 +39,7 @@ import { NotificationCenterComponent } from './components/header/notification-ce
     MatMenuModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTabsModule,
     AlertModule.forRoot()
   ],
   providers: [],

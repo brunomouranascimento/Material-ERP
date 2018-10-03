@@ -3,6 +3,45 @@
   font-family: 'Dosis Regular', Helvetica, Arial, sans-serif;
 }
 
+.default-theme .mat-tab-group.mat-primary .mat-ink-bar,
+.dark-theme .mat-tab-group.mat-primary .mat-ink-bar {
+  background-color: #FFFFFF !important;
+}
+
+.mat-tab-group {
+  height: 100%;
+}
+
+.default-theme .mat-tab-body-wrapper,
+.dark-theme .mat-tab-body-wrapper {
+  height: 100%;
+}
+
+.default-theme .mat-tab-header,
+.dark-theme .mat-tab-header {
+  margin-bottom: 15px;
+}
+
+.default-theme .mat-tab-label,
+.dark-theme .mat-tab-label, {
+  color: #FFFFFF !important;
+}
+
+.default-theme .alert-dismissible,
+.dark-theme .alert-dismissible, {
+
+  .close {
+    background-color: inherit;
+    border: 0;
+    font-size: xx-large;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    cursor: pointer;
+  }
+}
+
 .default-theme .mat-form-field-appearance-outline .mat-form-field-outline,
 .dark-theme .mat-form-field-appearance-outline .mat-form-field-outline {
   top: 0.5em;
