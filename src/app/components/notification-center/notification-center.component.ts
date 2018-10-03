@@ -5,7 +5,7 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
 
 @Component({
-  selector: 'erp-notification-center',
+  selector: 'app-notification-center',
   templateUrl: './notification-center.component.html',
   styleUrls: ['./notification-center.component.scss']
 })

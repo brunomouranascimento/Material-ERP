@@ -4,20 +4,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {
-  MatTooltipModule,
-  MatToolbarModule,
-  MatButtonModule, MatSidenavModule,
-  MatIconModule, MatListModule,
-  MatMenuModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatTabsModule
-} from '@angular/material';
+
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AlertModule } from 'ngx-bootstrap';
-import { NotificationCenterComponent } from './components/header/notification-center/notification-center.component';
+import { NotificationCenterComponent } from './components/notification-center/notification-center.component';
+import { AppMaterialModule } from './material/app-material.module';
+import { AppRoutingModule } from './routes/app.routing.module';
+
 
 @NgModule({
   declarations: [
@@ -30,17 +24,9 @@ import { NotificationCenterComponent } from './components/header/notification-ce
     BrowserModule,
     LayoutModule,
     BrowserAnimationsModule,
-    MatTooltipModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatMenuModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatTabsModule,
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    AppMaterialModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

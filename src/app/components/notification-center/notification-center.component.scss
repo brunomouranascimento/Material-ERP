@@ -1,6 +1,6 @@
 @import "~src/sass/_mixins.scss";
 
-.erp-notification-center {
+.app-notification-center {
   margin: 0;
   padding: 15px;
   list-style: none;
@@ -21,7 +21,7 @@
     width: 70vw;
   }
 
-  .erp-notification-center_wrapper {
+  .app-notification-center_wrapper {
     list-style: none;
     white-space: normal;
     height: 100%;

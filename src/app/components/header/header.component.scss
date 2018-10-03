@@ -1,6 +1,6 @@
 @import '~src/sass/_mixins.scss';
 
-.erp-header {
+.app-header {
   position: relative;
   display: flex;
   flex: 0 0 auto;
@@ -11,7 +11,7 @@
     display: flex;
     padding: 0;
 
-    .erp-header_wrapper {
+    .app-header_wrapper {
       height: 100%;
       margin: 0px;
       width: 100%;
@@ -22,7 +22,7 @@
       align-items: center;
       flex: 1 1 0%;
 
-      .erp-header_shortcuts {
+      .app-header_shortcuts {
         flex: 1 0 auto;
         box-sizing: border-box;
         flex-direction: row;
@@ -33,7 +33,7 @@
 
       }
 
-      .erp-header_toolbox {
+      .app-header_toolbox {
         flex: 0 1 auto;
         box-sizing: border-box;
         flex-direction: row;
@@ -41,7 +41,7 @@
         place-content: center flex-start;
         align-items: center;
 
-        .erp-header_user-button {
+        .app-header_user-button {
           min-width: 64px;
           height: 64px;
 

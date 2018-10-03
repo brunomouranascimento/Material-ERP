@@ -1,10 +1,10 @@
-<div class="erp-header">
+<div class="app-header">
   <mat-toolbar color="primary">
-    <div class="erp-header_wrapper" fxfill fxflex fxlayout="row" fxlayoutalign="start center">
+    <div class="app-header_wrapper" fxfill fxflex fxlayout="row" fxlayoutalign="start center">
 
       <ng-content></ng-content>
 
-      <div class="erp-header_shortcuts" fxflex="1 0 auto" fxlayout="row" fxlayoutalign="start center">
+      <div class="app-header_shortcuts" fxflex="1 0 auto" fxlayout="row" fxlayoutalign="start center">
         <span></span>
         <button mat-icon-button matTooltip="Clique para adicionar ou remover atalhos" [matMenuTriggerFor]="shortcuts"
           aria-describedby="message">
@@ -29,8 +29,8 @@
         </mat-menu>
       </div>
 
-      <div class="erp-header_toolbox" fxflex="0 1 auto" fxlayout="row" fxlayoutalign="start center">
-        <button aria-haspopup="true" class="erp-header_user-button" mat-button [matMenuTriggerFor]="userSettings">
+      <div class="app-header_toolbox" fxflex="0 1 auto" fxlayout="row" fxlayoutalign="start center">
+        <button aria-haspopup="true" class="app-header_user-button" mat-button [matMenuTriggerFor]="userSettings">
           <div class="wrapper" fxlayout="row" fxlayoutalign="center center">
             <img class="avatar" src="assets/images/avatars/bruno.jpg">
             <span class="username" fxhide fxshow.gt-sm>
@@ -91,7 +91,7 @@
         <button aria-label="Toggle quick panel" class="notification-center" matTooltip="Central de Notificações" mat-icon-button (click)="toggleNotificationCenter(true)">
           <mat-icon class="mat-icon material-icons" role="img" aria-hidden="true">format_list_bulleted</mat-icon>
         </button>
-        <erp-notification-center [isActive]="notificationCenterOpened" (close)="onClose($event)"></erp-notification-center>
+        <app-notification-center [isActive]="notificationCenterOpened" (close)="onClose($event)"></app-notification-center>
       </div>
     </div>
   </mat-toolbar>
