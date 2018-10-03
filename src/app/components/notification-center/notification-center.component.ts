@@ -3,6 +3,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
+import { DaytimeService } from '../../services/daytime.service';
+import { AlertService } from '../../services/alert.service';
 
 @Component({
   selector: 'app-notification-center',
@@ -15,39 +17,13 @@ export class NotificationCenterComponent implements OnInit {
   @Output() close = new EventEmitter<boolean>();
 
   dismissible = true;
-  defaultAlerts: any[] = [
-    {
-      type: 'success',
-      msg: 'Notificação de operação concluída com sucesso'
-    },
-    {
-      type: 'info',
-      msg: 'Notificação de informação exibida, sem importância'
-    },
-    {
-      type: 'danger',
-      msg: 'Notificação importante, solicitando atenção'
-    },
-    {
-      type: 'success',
-      msg: 'Notificação de operação concluída com sucesso'
-    },
-    {
-      type: 'info',
-      msg: 'Notificação de informação exibida, sem importância'
-    }
-  ];
-  alerts = this.defaultAlerts;
-
-  dayName = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
-  monName = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
-  today = new Date();
+  defaultAlerts: any[];
+  alerts: any[];
   now: string;
 
-  constructor(private breakpointObserver: BreakpointObserver) {
-    this.now = `${(this.dayName[this.today.getDay()])},
-      ${this.today.getDate()} de ${this.monName[this.today.getMonth()]} de ${this.today.getFullYear()}`;
-
+  constructor( private daytimeService: DaytimeService,
+    private alertService: AlertService,
+    private breakpointObserver: BreakpointObserver ) {
   }
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
@@ -74,6 +50,9 @@ export class NotificationCenterComponent implements OnInit {
 
 
   ngOnInit() {
+    this.now = this.daytimeService.getDaytTime();
+    this.defaultAlerts = this.alertService.getAlerts();
+    this.alerts = this.alertService.getAlerts();
   }
 
 }

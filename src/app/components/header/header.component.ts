@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-header',
@@ -12,9 +13,9 @@ import { map } from 'rxjs/operators';
 export class HeaderComponent implements OnInit {
 
   notificationCenterOpened = false;
+  user: {};
 
-  constructor( private breakpointObserver: BreakpointObserver )  {
-  }
+  constructor( private userService: UserService, private breakpointObserver: BreakpointObserver )  {}
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -29,7 +30,6 @@ export class HeaderComponent implements OnInit {
     document.body.classList.add(`${theme}-theme`);
   }
 
-
   toggleNotificationCenter(open: boolean) {
     this.notificationCenterOpened = open;
   }
@@ -39,6 +39,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.user = this.userService.getUser();
   }
 
 }
