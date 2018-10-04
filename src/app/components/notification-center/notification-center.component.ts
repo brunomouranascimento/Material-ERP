@@ -1,8 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { Observable } from 'rxjs';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
-import { map } from 'rxjs/operators';
 import { DaytimeService } from '../../services/daytime.service';
 import { AlertService } from '../../services/alert.service';
 
@@ -22,14 +19,8 @@ export class NotificationCenterComponent implements OnInit {
   now: string;
 
   constructor( private daytimeService: DaytimeService,
-    private alertService: AlertService,
-    private breakpointObserver: BreakpointObserver ) {
+    private alertService: AlertService ) {
   }
-
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-    .pipe(
-      map(result => result.matches)
-    );
 
   closeNotificationCenter(close: boolean) {
     this.close.emit(close);

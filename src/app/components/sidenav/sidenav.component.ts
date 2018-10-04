@@ -10,6 +10,8 @@ import { map } from 'rxjs/operators';
 })
 export class SidenavComponent implements OnInit {
 
+  isActive = false;
+
 
   constructor(private breakpointObserver: BreakpointObserver) {}
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
@@ -17,6 +19,9 @@ export class SidenavComponent implements OnInit {
     map(result => result.matches)
   );
 
+  toggleSidenav() {
+    this.isActive = !this.isActive;
+  }
 
   ngOnInit() {
   }

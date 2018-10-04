@@ -17,6 +17,9 @@ import { AppRoutingModule } from './routes/app.routing.module';
 import { UserService } from './services/user.service';
 import { DaytimeService } from './services/daytime.service';
 import { AlertService } from './services/alert.service';
+import { Pagina1Component } from './pages/pagina1/pagina1.component';
+import { HomeComponent } from './pages/home/home.component';
+import { PaceBarComponent } from './components/pace-bar/pace-bar.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { AlertService } from './services/alert.service';
     HeaderComponent,
     NotificationCenterComponent,
     FooterComponent,
-    MainComponent
+    MainComponent,
+    Pagina1Component,
+    HomeComponent,
+    PaceBarComponent
   ],
   imports: [
     BrowserModule,

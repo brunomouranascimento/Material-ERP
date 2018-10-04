@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { UserService } from '../../services/user.service';
 
 @Component({
@@ -15,12 +12,7 @@ export class HeaderComponent implements OnInit {
   notificationCenterOpened = false;
   user: {};
 
-  constructor( private userService: UserService, private breakpointObserver: BreakpointObserver )  {}
-
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-    .pipe(
-      map(result => result.matches)
-    );
+  constructor( private userService: UserService )  {}
 
   changeTheme(theme: string) {
     const classList = document.body.classList;

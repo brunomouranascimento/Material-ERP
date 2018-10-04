@@ -41,8 +41,12 @@
         place-content: center flex-start;
         align-items: center;
 
+        @include smartphone {
+          height: 56px;
+        }
+
         .app-header_user-button {
-          min-width: 64px;
+          min-width: 56px;
           height: 64px;
 
           .wrapper {
@@ -99,6 +103,10 @@
         background: rgba(0, 0, 0, 0.2);
         height: 64px;
         width: 1px;
+
+        @include smartphone {
+          height: 56px;
+        }
       }
     }
   }
