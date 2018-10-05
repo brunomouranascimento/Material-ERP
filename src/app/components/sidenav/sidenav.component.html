@@ -14,7 +14,7 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <perfect-scrollbar [config]="config">
+    <perfect-scrollbar>
       <app-header>
         <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>

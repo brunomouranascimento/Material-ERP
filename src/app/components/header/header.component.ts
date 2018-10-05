@@ -10,7 +10,7 @@ import { UserService } from '../../services/user.service';
 export class HeaderComponent implements OnInit {
 
   notificationCenterOpened = false;
-  user: {};
+  user: any;
 
   constructor( private userService: UserService )  {}
 

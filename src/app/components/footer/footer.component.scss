@@ -12,8 +12,17 @@
   bottom: 0;
   width: calc(100vw - 200px);
 
-  @include smartphone {
+  @include device(smartphone) {
     display: none;
+  }
+  @include device(smartphone-landscape) {
+    width: 100vw;
+  }
+  @include device(big-smartphone-landscape) {
+    width: 100vw;
+  }
+  @include device(ipad-landscape) {
+    width: calc(100vw - 200px);
   }
 
   .socials {

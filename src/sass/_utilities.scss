@@ -1,3 +1,11 @@
+.light-theme a:not(.mat-button):not(.mat-raised-button):not(.mat-fab):not(.mat-mini-fab):not([mat-list-item]) {
+  color: #000000 !important;
+}
+
+.light-theme .created-by {
+  color: #000000 !important;
+}
+
 .default-theme .mat-menu-item,
 .dark-theme .mat-menu-item,
 .light-theme .mat-menu-item {

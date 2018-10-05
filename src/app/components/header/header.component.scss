@@ -41,7 +41,7 @@
         place-content: center flex-start;
         align-items: center;
 
-        @include smartphone {
+        @include device(smartphone) {
           height: 56px;
         }
 
@@ -65,7 +65,7 @@
               border-radius: 50%;
               border: solid 2px;
 
-              @include smartphone {
+              @include device(smartphone) {
                 display: none;
               }
 
@@ -98,7 +98,7 @@
           min-width: 64px;
           height: 64px;
 
-          @include smartphone {
+          @include device(smartphone) {
             display: none;
           }
         }
@@ -114,7 +114,7 @@
         height: 64px;
         width: 1px;
 
-        @include smartphone {
+        @include device(smartphone) {
           height: 56px;
         }
       }

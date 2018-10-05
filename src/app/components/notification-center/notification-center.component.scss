@@ -16,9 +16,19 @@
   position: fixed;
   opacity: 0;
 
-  @include smartphone {
+  @include device(smartphone) {
     right: -70vw;
     width: 70vw;
+  }
+
+  @include device(smartphone-landscape) {
+    right: -60vw;
+    width: 60vw;
+  }
+
+  @include device(big-smartphone-landscape) {
+    right: -60vw;
+    width: 60vw;
   }
 
   .app-notification-center_wrapper {
@@ -32,8 +42,15 @@
   transform: translate(-30vw, 0);
   opacity: 1;
 
-  @include smartphone {
+  @include device(smartphone) {
     transform: translate(-70vw, 0);
+  }
+  @include device(smartphone-landscape) {
+    transform: translate(-60vw, 0);
+  }
+
+  @include device(big-smartphone-landscape) {
+    transform: translate(-60vw, 0);
   }
 }
 
