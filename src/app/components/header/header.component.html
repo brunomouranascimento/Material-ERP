@@ -30,9 +30,12 @@
       </div>
 
       <div class="app-header_toolbox" fxflex="0 1 auto" fxlayout="row" fxlayoutalign="start center">
-        <button aria-haspopup="true" class="app-header_user-button" mat-button [matMenuTriggerFor]="userSettings">
+        <button aria-haspopup="true" class="app-header_user-button" matTooltip="Informações do usuário" mat-button
+          [matMenuTriggerFor]="userSettings">
           <div class="wrapper" fxlayout="row" fxlayoutalign="center center">
-            <img class="avatar" src="assets/images/avatars/bruno.jpg">
+            <div class="avatar-wrapper">
+              <img class="avatar" src="assets/images/avatars/bruno.jpg">
+            </div>
             <span class="username" fxhide fxshow.gt-sm>
               {{user.name}}
             </span>
@@ -49,6 +52,7 @@
             <span>Temas</span>
           </button>
           <mat-menu #themes="matMenu">
+            <button mat-menu-item (click)="changeTheme('light')" style="padding-right: 0">Light</button>
             <button mat-menu-item (click)="changeTheme('default')" style="padding-right: 0">Purple</button>
             <button mat-menu-item (click)="changeTheme('dark')" style="padding-right: 0">Dark</button>
           </mat-menu>
@@ -64,7 +68,7 @@
 
         <div class="toolbar-separator"></div>
 
-        <button aria-haspopup="true" class="language-button" fxhide fxshow.gt-xs mat-button
+        <button aria-haspopup="true" class="language-button" matTooltip="Trocar idioma" fxhide fxshow.gt-xs mat-button
           [matMenuTriggerFor]="language">
           <div class="language-selected" fxlayout="row" fxlayoutalign="center center">
             <img class="flag mr-8" src="assets/images/flags/br.png">
@@ -88,7 +92,8 @@
 
         <div class="toolbar-separator" fxhide fxshow.gt-xs></div>
 
-        <button aria-label="Toggle quick panel" class="notification-center" matTooltip="Central de Notificações" mat-icon-button (click)="toggleNotificationCenter(true)">
+        <button aria-label="Toggle quick panel" class="notification-center" matTooltip="Central de Notificações"
+          mat-icon-button (click)="toggleNotificationCenter(true)">
           <mat-icon class="mat-icon material-icons" role="img" aria-hidden="true">format_list_bulleted</mat-icon>
         </button>
         <app-notification-center [isActive]="notificationCenterOpened" (close)="onClose($event)"></app-notification-center>

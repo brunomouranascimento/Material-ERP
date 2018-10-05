@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from '../app.component';
+
 import { Pagina1Component } from '../pages/pagina1/pagina1.component';
-import { SidenavComponent } from '../components/sidenav/sidenav.component';
-import { MainComponent } from '../components/main/main.component';
 import { HomeComponent } from '../pages/home/home.component';
+import { Pagina2Component } from '../pages/pagina2/pagina2.component';
+import { Pagina3Component } from '../pages/pagina3/pagina3.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'pages/pagina1', component: Pagina1Component}
+  {path: 'pages/pagina1', component: Pagina1Component},
+  {path: 'pages/pagina2', component: Pagina2Component},
+  {path: 'pages/pagina3', component: Pagina3Component}
 ];
 
 @NgModule({

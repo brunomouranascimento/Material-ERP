@@ -2,7 +2,7 @@
 
 .app-notification-center {
   margin: 0;
-  padding: 15px;
+  padding: 15px 30px;
   list-style: none;
   color: #FFFFFF;
   box-shadow: -7px 1px 6px -2px rgba(0, 0, 0, 0.24);
@@ -25,12 +25,6 @@
     list-style: none;
     white-space: normal;
     height: 100%;
-
-    p:first-of-type {
-      padding-top: 15px;
-      font-size: 36px;
-      text-align: center;
-    }
   }
 }
 
@@ -73,4 +67,18 @@
 
 .notifications-control {
   padding-bottom: 15px;
+}
+
+.notifications-controls_down {
+  display: flex;
+  justify-content: space-around;
+}
+.now {
+  padding-top: 15px;
+  font-size: 36px;
+  text-align: left;
+}
+
+.notifications-nope {
+  text-align: center;
 }

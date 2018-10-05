@@ -1,0 +1,27 @@
+@import "~src/sass/_mixins.scss";
+
+.app-footer {
+  display: flex;
+  justify-content: space-between;
+  flex: 0 0 auto;
+  padding: 10px 16px 10px 16px;
+  z-index: 3;
+  color: #FFFFFF;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: calc(100vw - 200px);
+
+  @include smartphone {
+    display: none;
+  }
+
+  .socials {
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+
+  }
+}
+

@@ -1,7 +1,13 @@
-<div class="app-main">
-  <p>
-    main works!
-  </p>
+<perfect-scrollbar [config]="config">
+  <div class="app-main">
+    <ng-content></ng-content>
+    <p>
+      main works!
+    </p>
 
-  <app-footer></app-footer>
-</div>
+    
+
+
+  </div>
+</perfect-scrollbar>
+<app-footer></app-footer>
