@@ -1,14 +1,179 @@
+@import '~src/sass/_mixins.scss';
+
 .app-sidenav {
+  position: fixed;
   height: 100vh;
-  font-weight: 600;
+  width: 22vw;
+  padding-top: 64px;
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.75);
+  transition: ease-in-out 0.2s all;
+  z-index: 2;
+
+  @include device(smartphone) {
+    width: 61vw;
+    left: -63vw;
+    padding-top: 56px;
+  }
+
+  @include device(smartphone-landscape) {
+    width: 35vw;
+    left: -35vw;
+  }
+
+  @include device(big-smartphone-landscape) {
+    width: 35vw;
+    left: -35vw;
+  }
+
+  .sidenav-header {
+    height: 64px;
+    padding: 15px 15px 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+
+    @include device(smartphone) {
+      height: 56px;
+      padding-top: 11px;
+    }
+
+    .application {
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      width: 165px;
+
+      @include device(smartphone) {
+        width: 150px;
+      }
+    }
+
+    .sidenav-toggle {
+      cursor: pointer;
+      padding-top: 6px;
+
+      @include device(smartphone) {
+        display: none;
+      }
+
+      @include device(smartphone-landscape) {
+        display: none;
+      }
+
+      @include device(big-smartphone) {
+        display: none;
+      }
+
+      @include device(big-smartphone-landscape) {
+        display: none;
+      }
+    }
+  }
 }
 
-.sidenav {
-  width: 200px;
-  box-shadow: 3px 0 6px rgba($color: #000000, $alpha: 0.24)
+.sidenav-container {
+  height: 100%;
+
+  .user {
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 136px;
+    padding: 0px 0 64px;
+
+
+    .name {
+      font-weight: bold;
+    }
+
+    .email {
+      font-size: 12px;
+    }
+
+    .avatar-container {
+      position: absolute;
+      top: 82px;
+      border-radius: 50%;
+      padding: 10px;
+      transform: translateX(-50%);
+      left: 50%;
+      box-shadow: inset 0px -13px 6px -7px rgba(0,0,0,0.75);
+
+      .avatar {
+        width: 64px;
+        height: 64px;
+        margin: 0;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .sidenav-menu {
+    flex: 1 1 auto;
+    padding-top: 40px;
+    box-shadow: 0px -3px 6px 0px rgba(0,0,0,0.75);
+
+    .sidenav-menu_button {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      height: 48px;
+      padding: 0 25px;
+      font-weight: 100;
+
+      .menu-name {
+        padding-left: 15px;
+      }
+    }
+  }
 }
 
-.mat-toolbar.mat-primary {
-  position: sticky;
-  top: 0;
+.sidenav-minimized {
+  width: 6vw;
+}
+
+.mobileActive {
+  left: 0;
+}
+
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  66% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  66% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade-in {
+  animation: 0.5s ease 0s normal forwards 1 fadein;
+}
+
+.fade-out {
+  animation: 0.2s ease 0s normal forwards 1 fadeout;
+  display: none !important;
 }

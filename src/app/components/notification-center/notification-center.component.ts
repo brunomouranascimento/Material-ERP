@@ -37,9 +37,6 @@ export class NotificationCenterComponent implements OnInit {
   onClosed(dismissedAlert: any): void {
     this.alerts = this.alerts.filter(alert => alert !== dismissedAlert);
   }
-
-
-
   ngOnInit() {
     this.now = this.daytimeService.getDaytTime();
     this.defaultAlerts = this.alertService.getAlerts();

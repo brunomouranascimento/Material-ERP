@@ -12,12 +12,23 @@
     background-color: mat-color($background, background);
     color: mat-color($foreground, text);
   }
-  .app-notification-center {
+  .app-sidenav, .app-footer, .app-notification-center, .sidenav-menu {
     background-color: mat-color($primary);
   }
 
-  .app-footer{
-    background-color: mat-color($primary);
+  .sidenav-header, .sidenav-container, .avatar-container {
+    background-color: darken(mat-color($primary), 20%);
+    color: mat-color($foreground, text);
+  }
+
+  .router-link-active {
+    background-color: darken(mat-color($primary), 5%);
+    border-right: solid 5px mat-color($accent);
+    transition: ease-in-out 0.2s all;
+  }
+
+  .router-link-active.sidenav-menu_button-minimized {
+    border-right: solid 15px mat-color($accent);
   }
 
   .created-by {

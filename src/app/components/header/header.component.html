@@ -2,10 +2,10 @@
   <mat-toolbar color="primary">
     <div class="app-header_wrapper" fxfill fxflex fxlayout="row" fxlayoutalign="start center">
 
-      <ng-content></ng-content>
-
       <div class="app-header_shortcuts" fxflex="1 0 auto" fxlayout="row" fxlayoutalign="start center">
-        <span></span>
+        <button mat-icon-button class="sidenav-toogle" matTooltip="Barra de menus" (click)="toggleMobileSidenav()">
+          <mat-icon role="img" aria-hidden="true">menu</mat-icon>
+        </button>
         <button mat-icon-button matTooltip="Clique para adicionar ou remover atalhos" [matMenuTriggerFor]="shortcuts"
           aria-describedby="message">
           <mat-icon role="img" aria-hidden="true">local_play</mat-icon>
@@ -34,7 +34,7 @@
           [matMenuTriggerFor]="userSettings">
           <div class="wrapper" fxlayout="row" fxlayoutalign="center center">
             <div class="avatar-wrapper">
-              <img class="avatar" src="assets/images/avatars/bruno.jpg">
+              <img class="avatar" src="{{ user.avatar }}">
             </div>
             <span class="username" fxhide fxshow.gt-sm>
               {{ user.name }}
@@ -96,8 +96,19 @@
           mat-icon-button (click)="toggleNotificationCenter(true)">
           <mat-icon class="mat-icon material-icons" role="img" aria-hidden="true">format_list_bulleted</mat-icon>
         </button>
-        <app-notification-center [isActive]="notificationCenterOpened" (close)="onClose($event)"></app-notification-center>
+        <app-notification-center [isActive]="notificationCenterOpened" (close)="onCloseNotificationCenter($event)"></app-notification-center>
       </div>
     </div>
   </mat-toolbar>
+</div>
+<div class="main-content">
+  <aside>
+    <app-sidenav [isMobileActive]="mobileSidenavOpened" (isCompacted)="onCompactSidenav($event)"></app-sidenav>
+  </aside>
+  <main>
+    <app-main [maximized]="sidenavCompacted">
+      <router-outlet></router-outlet>
+    </app-main>
+  </main>
+
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 
 import { UserService } from '../../services/user.service';
 
@@ -10,6 +10,8 @@ import { UserService } from '../../services/user.service';
 export class HeaderComponent implements OnInit {
 
   notificationCenterOpened = false;
+  sidenavCompacted = false;
+  mobileSidenavOpened = false;
   user: any;
 
   constructor( private userService: UserService )  {}
@@ -25,13 +27,19 @@ export class HeaderComponent implements OnInit {
   toggleNotificationCenter(open: boolean) {
     this.notificationCenterOpened = open;
   }
-
-  onClose(closeNotificationCenter: boolean) {
+  onCloseNotificationCenter(closeNotificationCenter: boolean) {
     this.notificationCenterOpened = closeNotificationCenter;
+  }
+
+  onCompactSidenav(compactSidenav: boolean) {
+    this.sidenavCompacted = compactSidenav;
+  }
+
+  toggleMobileSidenav() {
+    this.mobileSidenavOpened = !this.mobileSidenavOpened;
   }
 
   ngOnInit() {
     this.user = this.userService.getUser();
   }
-
 }

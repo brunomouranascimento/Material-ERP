@@ -1,9 +1,24 @@
 .app-main {
+  background-color: #E7E5E4;
   position: relative;
-  margin: 25px;
-  padding: 15px;
-  display: flex;
-  flex: 1 1 0%;
-  flex-direction: column;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  float: right;
+  bottom: 0;
+  width: 78vw;
+  height: 100vh;
+  transition: ease-in-out 0.2s all;
+
+  .app-main-content {
+    padding: 15px;
+    margin: 90px 20px 15px 20px;
+    min-height: calc(100vh - 158px);
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  }
+}
+
+.app-main_maximized {
+  width: 94vw;
 }

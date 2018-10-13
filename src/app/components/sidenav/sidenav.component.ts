@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
+import { ApplicationService } from '../../services/application.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -10,19 +10,25 @@ import { map } from 'rxjs/operators';
 })
 export class SidenavComponent implements OnInit {
 
-  isActive = false;
+  @Input() isMobileActive: boolean;
+  @Output() isCompacted = new EventEmitter<boolean>();
+
+  isMinimized = false;
+  application: any;
+  menus: any;
+  user: any;
+
+  constructor(private applicationService: ApplicationService, private userService: UserService) {}
 
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-  .pipe(
-    map(result => result.matches)
-  );
-
-  toggleSidenav() {
-    this.isActive = !this.isActive;
+  compactSidenav(compact: boolean) {
+    this.isMinimized = !this.isMinimized;
+    this.isCompacted.emit(compact);
   }
 
   ngOnInit() {
+    this.application = this.applicationService.getApplicationSettings();
+    this.menus = this.applicationService.getApplicationMenus();
+    this.user = this.userService.getUser();
   }
 }

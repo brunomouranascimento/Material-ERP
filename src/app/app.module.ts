@@ -10,8 +10,11 @@ import { NotificationCenterComponent } from './components/notification-center/no
 import { FooterComponent } from './components/footer/footer.component';
 import { MainComponent } from './components/main/main.component';
 import { Pagina1Component } from './pages/pagina1/pagina1.component';
+import { Pagina2Component } from './pages/pagina2/pagina2.component';
+import { Pagina3Component } from './pages/pagina3/pagina3.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PaceBarComponent } from './components/pace-bar/pace-bar.component';
+import { MaterialErpComponent } from './components/material-erp/material-erp.component';
 
 import { AlertModule } from 'ngx-bootstrap';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
@@ -23,8 +26,7 @@ import { AppRoutingModule } from './routes/app.routing.module';
 import { UserService } from './services/user.service';
 import { DaytimeService } from './services/daytime.service';
 import { AlertService } from './services/alert.service';
-import { Pagina2Component } from './pages/pagina2/pagina2.component';
-import { Pagina3Component } from './pages/pagina3/pagina3.component';
+
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -42,7 +44,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     HomeComponent,
     PaceBarComponent,
     Pagina2Component,
-    Pagina3Component
+    Pagina3Component,
+    MaterialErpComponent
   ],
   imports: [
     BrowserModule,

@@ -1,13 +1,12 @@
 <perfect-scrollbar>
-  <div class="app-main">
-    <ng-content></ng-content>
-    <p>
-      main works!
-    </p>
-
-
-
-
+  <div class="app-main" [ngClass]="{'app-main_maximized': maximized}">
+    <div class="app-main-content">
+      <ng-content></ng-content>
+      <p>
+        main works!
+      </p>
+    </div>
+    <app-footer></app-footer>
   </div>
+
 </perfect-scrollbar>
-<app-footer></app-footer>
