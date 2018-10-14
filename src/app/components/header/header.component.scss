@@ -164,3 +164,25 @@
   display: flex;
   justify-content: space-between;
 }
+
+.mobile-sidenav_overlay {
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: opacity 0.5s, visibility 0s 0.5s;
+}
+
+.active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s;
+  height: 100%;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  position: fixed;
+}

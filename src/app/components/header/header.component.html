@@ -103,12 +103,12 @@
 </div>
 <div class="main-content">
   <aside>
-    <app-sidenav [isMobileActive]="mobileSidenavOpened" (isCompacted)="onCompactSidenav($event)"></app-sidenav>
+    <app-sidenav [isMobileActive]="mobileSidenavOpened" (isCompacted)="onCompactSidenav($event)" (close)="onCloseMobileSidenav($event)"></app-sidenav>
   </aside>
+  <div [ngClass]="{active: mobileSidenavOpened}" class="mobile-sidenav_overlay" (click)="toggleMobileSidenav()"></div>
   <main>
     <app-main [maximized]="sidenavCompacted">
       <router-outlet></router-outlet>
     </app-main>
   </main>
-
 </div>

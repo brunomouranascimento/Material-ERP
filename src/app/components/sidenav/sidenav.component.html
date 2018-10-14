@@ -50,13 +50,22 @@
         </div>
       </div>
       <div class="sidenav-menu">
+        <div *ngIf="isMobileActive">
           <a *ngFor="let menu of menus" mat-button class="sidenav-menu_button" [routerLink]="[menu.routerLink]"
-            routerLinkActive="router-link-active" [ngClass]="{'sidenav-menu_button-minimized': isMinimized}">
+            routerLinkActive="router-link-active" [ngClass]="{'sidenav-menu_button-minimized': isMinimized}"
+            (click)="closeMobileSidenav()" >
             <mat-icon class="mat-18">{{ menu.icon }}</mat-icon>
             <span class="menu-name" [ngClass]="{'fade-out': isMinimized, 'fade-in': !isMinimized}">{{ menu.label }}</span>
           </a>
+        </div>
+        <div *ngIf="!isMobileActive">
+          <a *ngFor="let menu of menus" mat-button class="sidenav-menu_button" [routerLink]="[menu.routerLink]"
+          routerLinkActive="router-link-active" [ngClass]="{'sidenav-menu_button-minimized': isMinimized}">
+          <mat-icon class="mat-18">{{ menu.icon }}</mat-icon>
+          <span class="menu-name" [ngClass]="{'fade-out': isMinimized, 'fade-in': !isMinimized}">{{ menu.label }}</span>
+        </a>
+      </div>
       </div>
     </div>
   </perfect-scrollbar>
 </div>
-<div [ngClass]="{active: isMobileActive}" class="mobile-sidenav_overlay" (click)="closeMobileSidenav()"></div>

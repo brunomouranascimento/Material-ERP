@@ -35,6 +35,10 @@ export class HeaderComponent implements OnInit {
     this.sidenavCompacted = compactSidenav;
   }
 
+  onCloseMobileSidenav(closeMobileSidenav: boolean) {
+    this.mobileSidenavOpened = closeMobileSidenav;
+  }
+
   toggleMobileSidenav() {
     this.mobileSidenavOpened = !this.mobileSidenavOpened;
   }

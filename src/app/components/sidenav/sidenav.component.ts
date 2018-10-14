@@ -12,22 +12,22 @@ export class SidenavComponent implements OnInit {
 
   @Input() isMobileActive: boolean;
   @Output() isCompacted = new EventEmitter<boolean>();
+  @Output() close = new EventEmitter<boolean>();
 
   isMinimized = false;
-  mobileOverlay = false;
   application: any;
   menus: any;
   user: any;
 
   constructor(private applicationService: ApplicationService, private userService: UserService) {}
 
-
   compactSidenav(compact: boolean) {
     this.isMinimized = !this.isMinimized;
     this.isCompacted.emit(compact);
   }
 
-  closeMobileSidenav() {
+  closeMobileSidenav(close: boolean) {
+    this.close.emit(close);
     this.isMobileActive = !this.isMobileActive;
   }
 
@@ -36,4 +36,5 @@ export class SidenavComponent implements OnInit {
     this.menus = this.applicationService.getApplicationMenus();
     this.user = this.userService.getUser();
   }
+
 }
