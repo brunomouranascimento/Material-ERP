@@ -16,13 +16,19 @@
   }
 
   @include device(smartphone-landscape) {
-    width: 35vw;
-    left: -35vw;
+    width: 40vw;
+    left: -43vw;
+  }
+
+  @include device(big-smartphone) {
+    width: 59vw;
+    left: -61vw;
+    padding-top: 56px;
   }
 
   @include device(big-smartphone-landscape) {
     width: 35vw;
-    left: -35vw;
+    left: -38vw;
   }
 
   .sidenav-header {
@@ -85,6 +91,13 @@
     height: 136px;
     padding: 0px 0 64px;
 
+    @include device(smartphone) {
+      display: none;
+    }
+
+    @include device(smartphone-landscape) {
+      display: none;
+    }
 
     .name {
       font-weight: bold;
@@ -98,10 +111,10 @@
       position: absolute;
       top: 82px;
       border-radius: 50%;
-      padding: 10px;
+      padding: 6px;
       transform: translateX(-50%);
       left: 50%;
-      box-shadow: inset 0px -13px 6px -7px rgba(0,0,0,0.75);
+      box-shadow: inset 0px -13px 6px -9px rgba(0,0,0,0.75);
 
       .avatar {
         width: 64px;
@@ -115,7 +128,16 @@
   .sidenav-menu {
     flex: 1 1 auto;
     padding-top: 40px;
-    box-shadow: 0px -3px 6px 0px rgba(0,0,0,0.75);
+    padding-bottom: 90px;
+    box-shadow: 0px -3px 6px -2px rgba(0,0,0,0.75);
+
+    @include device(smartphone) {
+      padding-top: 0;
+    }
+
+    @include device(smartphone-landscape) {
+      padding-top: 0;
+    }
 
     .sidenav-menu_button {
       width: 100%;
@@ -176,4 +198,26 @@
 .fade-out {
   animation: 0.2s ease 0s normal forwards 1 fadeout;
   display: none !important;
+}
+
+.mobile-sidenav_overlay {
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: opacity 0.5s, visibility 0s 0.5s;
+}
+
+.active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s;
+  height: 100%;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  position: fixed;
 }

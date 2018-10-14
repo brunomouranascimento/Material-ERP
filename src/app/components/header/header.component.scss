@@ -86,8 +86,13 @@
               margin: 0 16px 0 0;
               border-radius: 50%;
 
+
               @include device(smartphone) {
-                display: none;
+                margin: 3px 8px 0 0;
+              }
+
+              @include device(smartphone-landscape) {
+                margin: 3px 8px 0 0;
               }
 
               .avatar {
@@ -107,6 +112,10 @@
               display: block;
               margin: 0 12px 0 0;
               font-weight: 100;
+
+              @include device(smartphone) {
+                display: none;
+              }
             }
 
             &>span {
@@ -120,6 +129,10 @@
           height: 64px;
 
           @include device(smartphone) {
+            display: none;
+          }
+
+          @include device(big-smartphone) {
             display: none;
           }
         }
@@ -136,6 +149,10 @@
         width: 1px;
 
         @include device(smartphone) {
+          height: 56px;
+        }
+
+        @include device(big-smartphone) {
           height: 56px;
         }
       }

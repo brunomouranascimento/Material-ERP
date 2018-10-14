@@ -14,6 +14,7 @@ export class SidenavComponent implements OnInit {
   @Output() isCompacted = new EventEmitter<boolean>();
 
   isMinimized = false;
+  mobileOverlay = false;
   application: any;
   menus: any;
   user: any;
@@ -24,6 +25,10 @@ export class SidenavComponent implements OnInit {
   compactSidenav(compact: boolean) {
     this.isMinimized = !this.isMinimized;
     this.isCompacted.emit(compact);
+  }
+
+  closeMobileSidenav() {
+    this.isMobileActive = !this.isMobileActive;
   }
 
   ngOnInit() {

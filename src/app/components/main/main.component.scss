@@ -1,3 +1,5 @@
+@import '~src/sass/_mixins.scss';
+
 .app-main {
   background-color: #E7E5E4;
   position: relative;
@@ -7,9 +9,19 @@
   height: 100vh;
   transition: ease-in-out 0.2s all;
 
+  @include device(smartphone) {
+    width: 100vw;
+  }
+  @include device(smartphone-landscape) {
+    width: 100vw;
+  }
+  @include device(big-smartphone) {
+    width: 100vw;
+  }
+
   .app-main-content {
     padding: 15px;
-    margin: 90px 20px 15px 20px;
+    margin: 90px 20px 70px 20px;
     min-height: calc(100vh - 158px);
     display: flex;
     flex: 1 1 0%;

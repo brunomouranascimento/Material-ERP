@@ -7,10 +7,11 @@
   padding: 10px 16px 10px 16px;
   z-index: 1;
   color: #FFFFFF;
-  position: absolute;
+  position: fixed;
   right: 0;
   bottom: 0;
-  width: 100%;
+  width: 78vw;
+  transition: ease-in-out 0.2s all;
 
   @include device(smartphone) {
     display: none;
@@ -18,11 +19,11 @@
   @include device(smartphone-landscape) {
     width: 100vw;
   }
-  @include device(big-smartphone-landscape) {
+  @include device(big-smartphone) {
     width: 100vw;
   }
-  @include device(ipad-landscape) {
-    width: calc(100vw - 200px);
+  @include device(big-smartphone-landscape) {
+    width: 100vw;
   }
 
   .socials {
@@ -34,3 +35,6 @@
   }
 }
 
+.maximized {
+  width: 94vw;
+}
