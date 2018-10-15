@@ -126,6 +126,7 @@
   }
 
   .sidenav-menu {
+    min-height: 100vh;
     flex: 1 1 auto;
     padding-top: 40px;
     padding-bottom: 90px;
@@ -155,7 +156,7 @@
 }
 
 .sidenav-minimized {
-  width: 6vw;
+  width: 5.5vw;
 }
 
 .mobileActive {

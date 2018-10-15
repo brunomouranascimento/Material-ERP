@@ -8,17 +8,30 @@
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
 
+  .pace .pace-progress {
+    background: mat-color($accent);
+  }
+
   .content {
     background-color: mat-color($background, background);
     color: mat-color($foreground, text);
   }
-  .app-sidenav, .app-footer, .app-notification-center, .sidenav-menu {
+   .app-sidenav, .app-footer, .app-notification-center, .sidenav-menu {
     background-color: mat-color($primary);
   }
 
   .sidenav-header, .sidenav-container, .avatar-container {
     background-color: darken(mat-color($primary), 20%);
     color: mat-color($foreground, text);
+  }
+
+  .app-main, .ps {
+    background-color: darken(mat-color($primary), 5%);
+  }
+
+  .app-main_title {
+    background-color: mat-color($primary);
+    border-bottom: solid 5px mat-color($accent);
   }
 
   .router-link-active {
@@ -28,10 +41,14 @@
   }
 
   .router-link-active.sidenav-menu_button-minimized {
-    border-right: solid 15px mat-color($accent);
+    border-right: solid 18px mat-color($accent);
   }
 
-  .created-by {
+  .mat-menu-panel, .main-title {
+    background-color: mat-color($primary);
+  }
+
+  .footer_created-by {
     color: mat-color($background, background);
     font-weight: 100;
   }
@@ -40,13 +57,10 @@
     color: mat-color($background, background);
     font-weight: bold;
   }
-  .mat-form-field-appearance-outline.mat-focused .mat-form-field-prefix, .mat-form-field-appearance-outline.mat-focused .mat-form-field-suffix {
-    color: mat-color($primary);
-  }
 }
 
 $default-primary:     mat-palette($mat-deep-purple, 600);
-$default-accent:      mat-palette($mat-orange, A200, A100, A400);
+$default-accent:      mat-palette($mat-orange, 600);
 $default-warn:        mat-palette($mat-red);
 $default-foreground:  mat-palette($mat-deep-purple, 900);
 $default-theme:       mat-light-theme($default-primary, $default-accent, $default-warn);

@@ -1,22 +1,63 @@
-.light-theme a:not(.mat-button):not(.mat-raised-button):not(.mat-fab):not(.mat-mini-fab):not([mat-list-item]) {
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+
+  .pace-progress {
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    right: 100%;
+    width: 100%;
+    height: 3px;
+  }
+}
+
+.pace-inactive {
+  display: none;
+}
+
+.light-theme .mat-form-field-appearance-outline.mat-focused .mat-form-field-prefix,
+.light-theme .mat-form-field-appearance-outline.mat-focused .mat-form-field-suffix,
+.light-theme .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick,
+.light-theme .created-by,
+.light-theme a:not(.mat-button):not(.mat-raised-button):not(.mat-fab):not(.mat-mini-fab):not([mat-list-item]),
+.light-theme .app-notification-center,
+.light-theme .mat-tab-label,
+.light-theme .mat-input-element,
+.light-theme .mat-form-field.mat-focused .mat-form-field-label {
   color: #000000 !important;
 }
 
-.default-theme .app-sidenav .sidenav-header {
-  color: #FFFFFF;
-}
-
-.default-theme .sidenav-container {
+.default-theme .app-sidenav .sidenav-header,
+.default-theme .sidenav-container,
+.default-theme .mat-menu-item,
+.default-theme .mat-menu-item .mat-icon:not([color]),
+.default-theme .mat-menu-item-submenu-trigger::after,
+.dark-theme .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick,
+.default-theme .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick,
+.dark-theme .mat-form-field-appearance-outline.mat-focused .mat-form-field-prefix,
+.dark-theme .mat-form-field-appearance-outline.mat-focused .mat-form-field-suffix,
+.default-theme .mat-form-field-appearance-outline.mat-focused .mat-form-field-prefix,
+.default-theme .mat-form-field-appearance-outline.mat-focused .mat-form-field-suffix,
+.default-theme .mat-form-field-appearance-outline .mat-form-field-outline-thick,
+.default-theme .mat-nav-list .mat-list-item,
+.default-theme .mat-input-element,
+.default-theme .mat-tab-label,
+.dark-theme .mat-tab-label,
+.dark-theme .mat-input-element,
+.dark-theme .mat-form-field.mat-focused .mat-form-field-label,
+.default-theme .mat-form-field.mat-focused .mat-form-field-label,
+.default-theme .app-main_title,
+.dark-theme .app-main_title {
   color: #FFFFFF !important;
 }
 
 .fab {
   font-size: 32px;
   font-weight: 100;
-}
-
-.light-theme .created-by {
-  color: #000000 !important;
 }
 
 .default-theme .mat-menu-item,
@@ -34,42 +75,27 @@
   background-color: #FFFFFF !important;
 }
 
-.dark-theme .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
-  color: #FFFFFF !important;
-}
-
-.light-theme .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
-  color: #000000 !important;
-}
-
-.dark-theme .mat-form-field-appearance-outline.mat-focused .mat-form-field-prefix,
-.dark-theme .mat-form-field-appearance-outline.mat-focused .mat-form-field-suffix {
-  color: #FFFFFF !important;
-}
-
-.light-theme .mat-form-field-appearance-outline.mat-focused .mat-form-field-prefix,
-.light-theme .mat-form-field-appearance-outline.mat-focused .mat-form-field-suffix {
-  color: #000000 !important;
+.default-theme .mat-form-field-appearance-outline .mat-form-field-outline,
+.default-theme .mat-form-field-label,
+.dark-theme .mat-form-field-prefix,
+.dark-theme .mat-form-field-suffix,
+.default-theme .mat-form-field-prefix,
+.default-theme .mat-form-field-suffix {
+  color: rgba(255, 255, 255, 0.3) !important;
 }
 
 
 .light-theme .mat-form-field-prefix,
-.light-theme .mat-form-field-suffix {
+.light-theme .mat-form-field-suffix,
+.default-theme .mat-form-field-prefix,
+.default-theme .mat-form-field-suffix {
   color: lightgray !important;
-}
-
-.dark-theme .mat-form-field-prefix,
-.dark-theme .mat-form-field-suffix {
-  color: rgba(255, 255, 255, 0.3) !important;
-}
-
-.mat-tab-group {
-  height: 100%;
 }
 
 .default-theme .mat-tab-body-wrapper,
 .dark-theme .mat-tab-body-wrapper,
-.light-theme .mat-tab-body-wrapper {
+.light-theme .mat-tab-body-wrapper,
+.mat-tab-group {
   height: 100%;
 }
 
@@ -77,19 +103,6 @@
 .dark-theme .mat-tab-header,
 .light-theme .mat-tab-header {
   margin-bottom: 15px;
-}
-
-.light-theme .app-notification-center {
-  color: #000000 !important;
-}
-
-.light-theme .mat-tab-label {
-  color: #000000 !important;
-}
-
-.default-theme .mat-tab-label,
-.dark-theme .mat-tab-label {
-  color: #FFFFFF !important;
 }
 
 .default-theme .alert-dismissible,
@@ -115,7 +128,6 @@
   padding: 0.3rem 1rem;
 }
 
-
 .default-theme .mat-form-field-appearance-outline .mat-form-field-outline,
 .dark-theme .mat-form-field-appearance-outline .mat-form-field-outline,
 .light-theme .mat-form-field-appearance-outline .mat-form-field-outline {
@@ -135,16 +147,17 @@
 .dark-theme .mat-raised-button,
 .light-theme .mat-raised-button,
 .default-theme .mat-raised-button {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
+  text-transform: uppercase;
 }
 
 .dark-theme .mat-raised-button,
 .light-theme .mat-raised-button,
 .default-theme .mat-raised-button {
-  margin: 0 0px 16px 0;
+  margin: 0 15px 16px 0;
+  padding: 6px;
 }
-
 
 .mat-button .mat-button-wrapper>.language-selected {
   flex-direction: row;
@@ -155,12 +168,8 @@
   align-items: center
 }
 
-.light-theme .mat-input-element {
-  color: #000000;
-}
-
-.dark-theme .mat-input-element {
-  color: #FFFFFF;
+.mat-input-element {
+  height: 20px;
 }
 
 .default-theme .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
@@ -170,14 +179,6 @@
   -webkit-transform: translateY(-1.59375em) scale(0.75);
   transform: translateY(-1.55em) scale(0.75);
   width: 133.33333333%;
-}
-
-.dark-theme .mat-form-field.mat-focused .mat-form-field-label {
-  color: #FFFFFF !important;
-}
-
-.light-theme .mat-form-field.mat-focused .mat-form-field-label {
-  color: #000000 !important;
 }
 
 .mr-8 {
@@ -203,4 +204,15 @@
   width: 240px;
   min-width: 240px;
   max-width: 240px;
+}
+
+perfect-scrollbar>.ps--scrolling-y>.ps__rail-y,
+perfect-scrollbar>.ps--scrolling-x>.ps__rail-x,
+.ps .ps__rail-x:hover,
+.ps .ps__rail-y:hover,
+.ps .ps__rail-x:focus,
+.ps .ps__rail-y:focus,
+.ps .ps__rail-x.ps--clicking,
+.ps .ps__rail-y.ps--clicking {
+  background-color: transparent !important;
 }

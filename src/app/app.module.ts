@@ -13,7 +13,6 @@ import { Pagina1Component } from './pages/pagina1/pagina1.component';
 import { Pagina2Component } from './pages/pagina2/pagina2.component';
 import { Pagina3Component } from './pages/pagina3/pagina3.component';
 import { HomeComponent } from './pages/home/home.component';
-import { PaceBarComponent } from './components/pace-bar/pace-bar.component';
 import { MaterialErpComponent } from './components/material-erp/material-erp.component';
 
 import { AlertModule } from 'ngx-bootstrap';
@@ -42,7 +41,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     MainComponent,
     Pagina1Component,
     HomeComponent,
-    PaceBarComponent,
     Pagina2Component,
     Pagina3Component,
     MaterialErpComponent
