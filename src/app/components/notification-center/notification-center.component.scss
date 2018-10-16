@@ -17,13 +17,13 @@
   opacity: 0;
 
   @include device(smartphone) {
-    right: -70vw;
-    width: 70vw;
+    right: -80vw;
+    width: 80vw;
   }
 
   @include device(smartphone-landscape) {
-    right: -60vw;
-    width: 60vw;
+    right: -70vw;
+    width: 70vw;
   }
 
   @include device(big-smartphone-landscape) {
@@ -43,8 +43,9 @@
   opacity: 1;
 
   @include device(smartphone) {
-    transform: translate(-70vw, 0);
+    transform: translate(-80vw, 0);
   }
+
   @include device(smartphone-landscape) {
     transform: translate(-60vw, 0);
   }
@@ -81,6 +82,21 @@
   margin-right: 8px;
 }
 
+.tab-name {
+
+  @include device(smartphone) {
+    display: none;
+  }
+
+  @include device(smartphone-landscape) {
+    display: none;
+  }
+
+  @include device(big-smartphone-landscape) {
+    display: none;
+  }
+}
+
 
 .notifications-control {
   padding-bottom: 15px;
@@ -90,6 +106,7 @@
   display: flex;
   justify-content: space-around;
 }
+
 .now {
   padding-top: 15px;
   font-size: 36px;

@@ -55,6 +55,15 @@
   color: #FFFFFF !important;
 }
 
+.mat-tab-labels {
+  justify-content: space-between;
+}
+
+.mat-tab-body-content {
+  overflow-x: hidden !important;
+  overflow-y: scroll !important;
+}
+
 .fab {
   font-size: 32px;
   font-weight: 100;
@@ -156,7 +165,7 @@
 .light-theme .mat-raised-button,
 .default-theme .mat-raised-button {
   margin: 0 15px 16px 0;
-  padding: 6px;
+  padding: 0 16px;
 }
 
 .mat-button .mat-button-wrapper>.language-selected {

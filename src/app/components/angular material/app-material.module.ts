@@ -40,4 +40,4 @@ import {
   ],
   declarations: []
 })
-export class AppMaterialModule { }
+export class AngularMaterialModule { }

@@ -4,7 +4,7 @@
       <mat-tab class="today">
         <ng-template mat-tab-label>
           <mat-icon class="example-tab-icon">today</mat-icon>
-          Hoje
+          <span class="tab-name">Hoje</span>
         </ng-template>
         <p class="now">{{ now }}</p>
       </mat-tab>
@@ -12,7 +12,7 @@
       <mat-tab class="notifications">
         <ng-template mat-tab-label>
           <mat-icon class="example-tab-icon">notifications</mat-icon>
-          Notificações
+          <span class="tab-name">Notificações</span>
         </ng-template>
         <div class="notifications-control">
           <button mat-raised-button color="warn" class="btn-block" (click)="clear()">
