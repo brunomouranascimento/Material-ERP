@@ -30,7 +30,9 @@
               "src/sass/styles.scss",
               "src/sass/themes.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/pace.min.js"
+            ]
           },
           "configurations": {
             "production": {
