@@ -1,0 +1,31 @@
+<div class="app-card" [ngClass]="{small: size === 'small', medium: size === 'medium', large: size === 'large', 'flipped-card': flipped}">
+  <div class="app-card_front">
+    <div class="app-card_header">
+      <span class="app-card_header-label"> {{ label }} </span>
+      <span *ngIf="flippable" class="app-card_header-toggle">
+        <mat-icon class="mat-18" (click)="flipCard()">keyboard_arrow_right</mat-icon>
+      </span>
+      <span *ngIf="compactable" class="app-card_header-toggle">
+        <mat-icon class="mat-18">keyboard_arrow_up</mat-icon>
+      </span>
+    </div>
+    <div class="app-card_body">
+      <ng-content select=".front"></ng-content>
+    </div>
+  </div>
+  <div class="app-card_back">
+      <div class="app-card_header">
+        <span class="app-card_header-label"> {{ label }} </span>
+        <span *ngIf="flippable" class="app-card_header-toggle">
+          <mat-icon class="mat-18" (click)="flipCard()">keyboard_arrow_left</mat-icon>
+        </span>
+        <span *ngIf="compactable" class="app-card_header-toggle">
+          <mat-icon class="mat-18">keyboard_arrow_up</mat-icon>
+        </span>
+      </div>
+      <div class="app-card_body">
+        <ng-content select=".back"></ng-content>
+      </div>
+    </div>
+
+</div>

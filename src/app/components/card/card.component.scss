@@ -1,0 +1,79 @@
+@import '~src/sass/_mixins.scss';
+
+.app-card {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex: 1 1 0%;
+  flex-direction: column;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  margin-bottom: 21px;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: 0.5s;
+
+  .app-card_front {
+    transform: rotateY(0deg);
+  }
+
+  .app-card_back {
+    transform: rotateY(180deg);
+  }
+
+  .app-card_front,
+  .app-card_back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+
+    .app-card_header {
+      user-select: none;
+      height: 50px;
+      padding: 12px 12px 12px 18px;
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+
+      .app-card_header-toggle {
+        cursor: pointer;
+      }
+
+      @include device(smartphone) {
+        height: 48px;
+      }
+    }
+
+    .app-card_body {
+      padding: 15px;
+    }
+  }
+}
+
+.small {
+  height: 216px;
+
+  .app-card_body {
+    height: 167px;
+  }
+}
+
+.medium {
+  height: 336px;
+
+  .app-card_body {
+    height: 287px;
+  }
+}
+
+.large {
+  height: 576px;
+
+  .app-card_body {
+    height: 527px;
+  }
+}
+
+.flipped-card {
+  transform: rotateY(180deg);
+}

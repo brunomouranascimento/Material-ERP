@@ -31,7 +31,8 @@
               "src/sass/themes.scss"
             ],
             "scripts": [
-              "src/assets/js/pace.min.js"
+              "src/assets/js/pace.min.js",
+              "node_modules/chart.js/dist/Chart.bundle.js"
             ]
           },
           "configurations": {

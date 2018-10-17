@@ -17,24 +17,24 @@ export class ApplicationService {
         id: 1,
         label: 'Dashboard',
         icon: 'dashboard',
-        routerLink: '../../pages/home'
+        routerLink: '../../pages/dashboard'
       },
       {
         id: 2,
         label: 'Página 1',
-        icon: 'dashboard',
+        icon: 'description',
         routerLink: '../../pages/pagina1'
       },
       {
         id: 3,
         label: 'Página 2',
-        icon: 'dashboard',
+        icon: 'dns',
         routerLink: '../../pages/pagina2'
       },
       {
         id: 4,
         label: 'Página 3',
-        icon: 'dashboard',
+        icon: 'event',
         routerLink: '../../pages/pagina3'
       }
     ];

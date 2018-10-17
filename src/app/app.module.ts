@@ -12,7 +12,6 @@ import { UserService } from './services/user.service';
 import { DaytimeService } from './services/daytime.service';
 import { AlertService } from './services/alert.service';
 
-
 @NgModule({
   declarations: [
     AppComponent

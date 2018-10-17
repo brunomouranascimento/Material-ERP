@@ -23,18 +23,9 @@
     display: flex;
     flex: 1 1 0%;
     flex-direction: column;
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 
-    .app-main_title {
-      height: 56px;
-      padding: 12px 25px;
-      display: flex;
-    justify-content: space-between;
-    }
     .app-main_content {
-      padding: 15px;
-      background-color: #EBEBEB;
-      min-height: calc(100vh - 216px);
+      min-height: calc(100vh - 160px);
     }
   }
 }

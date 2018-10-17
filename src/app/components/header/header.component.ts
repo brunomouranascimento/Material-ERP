@@ -9,10 +9,11 @@ import { UserService } from '../../services/user.service';
 })
 export class HeaderComponent implements OnInit {
 
-  notificationCenterOpened = false;
-  sidenavCompacted = false;
-  mobileSidenavOpened = false;
   user: any;
+
+  notificationCenterOpened  = false;
+  sidenavCompacted          = false;
+  mobileSidenavOpened       = false;
 
   constructor( private userService: UserService )  {}
 
@@ -27,6 +28,7 @@ export class HeaderComponent implements OnInit {
   toggleNotificationCenter(open: boolean) {
     this.notificationCenterOpened = open;
   }
+
   onCloseNotificationCenter(closeNotificationCenter: boolean) {
     this.notificationCenterOpened = closeNotificationCenter;
   }
