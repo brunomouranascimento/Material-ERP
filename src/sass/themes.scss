@@ -46,7 +46,8 @@
   .mat-form-field.mat-focused .mat-form-field-label,
   .app-main_title,
   .app-header_wrapper,
-  .mat-icon-button {
+  .mat-icon-button,
+  .mat-raised-button.mat-accent {
     color: mat-color($foreground, text);
   }
 
@@ -54,7 +55,8 @@
     background-color: mat-color($foreground, text);
   }
 
-  .mat-slide-toggle.mat-warn.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  .mat-slide-toggle.mat-warn.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar,
+  .mat-slide-toggle.mat-warn .mat-ripple-element {
     background-color: rgba(198,198,198, 0.5);
   }
 
@@ -109,6 +111,10 @@
   a:not(.mat-button):not(.mat-raised-button):not(.mat-fab):not(.mat-mini-fab):not([mat-list-item]) {
     color: mat-color($foreground, text);
     font-weight: bold;
+  }
+
+  .mat-fab.mat-accent {
+    color: mat-color($foreground, text);
   }
 }
 
