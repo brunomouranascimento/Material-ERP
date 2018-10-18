@@ -2,41 +2,41 @@ import { NgModule } from '@angular/core';
 
 import {
   MatTooltipModule,
-  MatToolbarModule,
   MatButtonModule,
-  MatSidenavModule,
   MatIconModule,
   MatListModule,
   MatMenuModule,
   MatFormFieldModule,
   MatInputModule,
-  MatTabsModule
+  MatTabsModule,
+  MatBadgeModule,
+  MatSlideToggleModule
 } from '@angular/material';
 
 @NgModule({
   imports: [
     MatTooltipModule,
-    MatToolbarModule,
     MatButtonModule,
-    MatSidenavModule,
     MatIconModule,
     MatListModule,
     MatMenuModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTabsModule
+    MatTabsModule,
+    MatBadgeModule,
+    MatSlideToggleModule
   ],
   exports: [
     MatTooltipModule,
-    MatToolbarModule,
     MatButtonModule,
-    MatSidenavModule,
     MatIconModule,
     MatListModule,
     MatMenuModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTabsModule
+    MatTabsModule,
+    MatBadgeModule,
+    MatSlideToggleModule
   ],
   declarations: []
 })

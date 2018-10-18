@@ -7,7 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
-  @Input() label: string;
+  @Input() labelFront: string;
+  @Input() labelBack: string;
   @Input() size: string;
   @Input() flippable = false;
   @Input() compactable = false;

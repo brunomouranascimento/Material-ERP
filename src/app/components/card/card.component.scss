@@ -12,6 +12,34 @@
   transform-style: preserve-3d;
   transition: 0.5s;
 
+  &.small {
+    height: 216px;
+
+    .app-card_body {
+      height: 167px;
+    }
+  }
+
+  &.medium {
+    height: 336px;
+
+    .app-card_body {
+      height: 287px;
+    }
+  }
+
+  &.large {
+    height: 576px;
+
+    .app-card_body {
+      height: 527px;
+    }
+  }
+
+  &.flipped-card {
+    transform: rotateY(180deg);
+  }
+
   .app-card_front {
     transform: rotateY(0deg);
   }
@@ -48,32 +76,4 @@
       padding: 15px;
     }
   }
-}
-
-.small {
-  height: 216px;
-
-  .app-card_body {
-    height: 167px;
-  }
-}
-
-.medium {
-  height: 336px;
-
-  .app-card_body {
-    height: 287px;
-  }
-}
-
-.large {
-  height: 576px;
-
-  .app-card_body {
-    height: 527px;
-  }
-}
-
-.flipped-card {
-  transform: rotateY(180deg);
 }

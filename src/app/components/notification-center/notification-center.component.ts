@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, DoCheck, EventEmitter, } from '@angular/core';
 
 import { DaytimeService } from '../../services/daytime.service';
 import { AlertService } from '../../services/alert.service';
@@ -8,39 +8,59 @@ import { AlertService } from '../../services/alert.service';
   templateUrl: './notification-center.component.html',
   styleUrls: ['./notification-center.component.scss']
 })
-export class NotificationCenterComponent implements OnInit {
+export class NotificationCenterComponent implements OnInit, DoCheck {
 
   @Input() isActive: boolean;
   @Output() close = new EventEmitter<boolean>();
+  @Output() notifications = new EventEmitter<number>();
 
-  dismissible = true;
+  notificationsCount: any;
   defaultAlerts: any[];
   alerts: any[];
   now: string;
 
-  constructor( private daytimeService: DaytimeService,
-    private alertService: AlertService ) {
+  todayTabActive = true;
+  notificationsTabActive = false;
+
+  constructor(private daytimeService: DaytimeService, private alertService: AlertService) {
+  }
+
+  toggleTodayTab() {
+    this.todayTabActive = true;
+    this.notificationsTabActive = false;
+  }
+
+  toggleNotificationsTab() {
+    this.notificationsTabActive = true;
+    this.todayTabActive = false;
   }
 
   closeNotificationCenter(close: boolean) {
     this.close.emit(close);
   }
 
-  reset(): void {
+  resetNotifications(): void {
     this.alerts = this.defaultAlerts;
   }
 
-  clear() {
+  clearNotifications() {
     this.alerts = [];
   }
 
-  onClosed(dismissedAlert: any): void {
-    this.alerts = this.alerts.filter(alert => alert !== dismissedAlert);
+  dismissNotification(notification) {
+    this.alerts.splice(this.alerts.indexOf(notification), 1);
   }
+
   ngOnInit() {
     this.now = this.daytimeService.getDaytTime();
     this.defaultAlerts = this.alertService.getAlerts();
     this.alerts = this.alertService.getAlerts();
+    this.notificationsCount = this.alerts.length;
+  }
+
+  ngDoCheck() {
+    this.notificationsCount = this.alerts.length;
+    this.notifications.emit(this.notificationsCount);
   }
 
 }

@@ -7,160 +7,162 @@
   width: 100vw;
   display: flex;
   flex: 0 0 auto;
-  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.75);
   z-index: 3;
 
-  mat-toolbar {
+
+  .app-header_wrapper {
     flex-direction: row;
     box-sizing: border-box;
     display: flex;
     padding: 0;
+    height: 100%;
+    margin: 0px;
+    width: 100%;
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    place-content: center flex-start;
+    align-items: center;
+    flex: 1 1 0%;
 
-    .app-header_wrapper {
-      height: 100%;
-      margin: 0px;
-      width: 100%;
-      flex-direction: row;
+    .app-header_shortcuts {
+      flex: 1 0 auto;
       box-sizing: border-box;
+      flex-direction: row;
       display: flex;
       place-content: center flex-start;
       align-items: center;
-      flex: 1 1 0%;
+      padding: 0 0px 0 16px;
+      color: #FFFFFF;
 
-      .app-header_shortcuts {
-        flex: 1 0 auto;
-        box-sizing: border-box;
-        flex-direction: row;
-        display: flex;
-        place-content: center flex-start;
-        align-items: center;
-        padding: 0 0px 0 16px;
-
-        .sidenav-toogle {
-          display: none;
-
-          @include device(smartphone) {
-            display: block;
-          }
-          @include device(smartphone-landscape) {
-            display: block;
-          }
-          @include device(big-smartphone) {
-            display: block;
-          }
-          @include device(big-smartphone-landscape) {
-            display: block;
-          }
-        }
-
-      }
-
-      .app-header_toolbox {
-        flex: 0 1 auto;
-        box-sizing: border-box;
-        flex-direction: row;
-        display: flex;
-        place-content: center flex-start;
-        align-items: center;
+      .app-header_mobile-sidenav-toogle {
+        display: none;
 
         @include device(smartphone) {
-          height: 56px;
+          display: block;
         }
 
-        .app-header_user-button {
-          min-width: 56px;
-          height: 64px;
-
-          .wrapper {
-            flex-direction: row;
-            box-sizing: border-box;
-            display: flex;
-            max-height: 100%;
-            place-content: center;
-            align-items: center;
-
-            .avatar-wrapper {
-              border-radius: 50%;
-              width: 44px;
-              height: 44px;
-              margin: 0 16px 0 0;
-              border-radius: 50%;
-
-
-              @include device(smartphone) {
-                margin: 3px 8px 0 0;
-              }
-
-              @include device(smartphone-landscape) {
-                margin: 3px 8px 0 0;
-              }
-
-              .avatar {
-                width: 40px;
-                min-width: 40px;
-                height: 40px;
-                line-height: 40px;
-                margin: 0 16px 0 0;
-                border-radius: 50%;
-                font-size: 17px;
-                font-weight: 500;
-                text-align: center;
-              }
-            }
-
-            .username {
-              display: block;
-              margin: 0 12px 0 0;
-              font-weight: 100;
-
-              @include device(smartphone) {
-                display: none;
-              }
-            }
-
-            &>span {
-              display: block;
-            }
-          }
-        }
-
-        .language-button {
-          min-width: 64px;
-          height: 64px;
-
-          @include device(smartphone) {
-            display: none;
-          }
-
-          @include device(big-smartphone) {
-            display: none;
-          }
-        }
-
-        .notification-center {
-          min-width: 64px;
-          height: 64px;
-        }
-      }
-
-      .toolbar-separator {
-        background: rgba(0, 0, 0, 0.2);
-        height: 64px;
-        width: 1px;
-
-        @include device(smartphone) {
-          height: 56px;
+        @include device(smartphone-landscape) {
+          display: block;
         }
 
         @include device(big-smartphone) {
-          height: 56px;
+          display: block;
         }
+
+        @include device(big-smartphone-landscape) {
+          display: block;
+        }
+      }
+
+    }
+
+    .app-header_toolbox {
+      flex: 0 1 auto;
+      box-sizing: border-box;
+      flex-direction: row;
+      display: flex;
+      place-content: center flex-start;
+      align-items: center;
+
+      @include device(smartphone) {
+        height: 56px;
+      }
+
+      .app-header_user-button {
+        min-width: 56px;
+        height: 64px;
+
+        .wrapper {
+          flex-direction: row;
+          box-sizing: border-box;
+          display: flex;
+          max-height: 100%;
+          place-content: center;
+          align-items: center;
+
+          .avatar-wrapper {
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            margin: 0 16px 0 0;
+            border-radius: 50%;
+
+
+            @include device(smartphone) {
+              margin: 3px 8px 0 0;
+            }
+
+            @include device(smartphone-landscape) {
+              margin: 3px 8px 0 0;
+            }
+
+            .avatar {
+              width: 40px;
+              min-width: 40px;
+              height: 40px;
+              line-height: 40px;
+              margin: 0 16px 0 0;
+              border-radius: 50%;
+              font-size: 17px;
+              font-weight: 500;
+              text-align: center;
+            }
+          }
+
+          .username {
+            display: block;
+            margin: 0 12px 0 0;
+            font-weight: 100;
+
+            @include device(smartphone) {
+              display: none;
+            }
+          }
+
+          &>span {
+            display: block;
+          }
+        }
+      }
+
+      .language-button {
+        min-width: 64px;
+        height: 64px;
+
+        @include device(smartphone) {
+          display: none;
+        }
+
+        @include device(big-smartphone) {
+          display: none;
+        }
+      }
+
+      .notification-center {
+        min-width: 64px;
+        height: 64px;
+      }
+    }
+
+    .toolbar-separator {
+      background: rgba(0, 0, 0, 0.2);
+      height: 64px;
+      width: 1px;
+
+      @include device(smartphone) {
+        height: 56px;
+      }
+
+      @include device(big-smartphone) {
+        height: 56px;
       }
     }
   }
 }
 
-.main-content {
+.app-header_main-content {
   display: flex;
   justify-content: space-between;
 }
@@ -174,15 +176,17 @@
   visibility: hidden;
   background-color: rgba(0, 0, 0, 0.6);
   transition: opacity 0.5s, visibility 0s 0.5s;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    position: fixed;
+  }
 }
 
-.active {
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.5s;
-  height: 100%;
-  left: 0;
-  top: 0;
-  overflow-y: auto;
-  position: fixed;
-}
+

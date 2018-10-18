@@ -22,7 +22,35 @@ export class AlertService {
         msg: 'Notificação importante, solicitando atenção'
       },
       {
-        type: 'success',
+        type: 'warning',
+        msg: 'Notificação de operação concluída com sucesso'
+      },
+      {
+        type: 'info',
+        msg: 'Notificação de informação exibida, sem importância'
+      },
+      {
+        type: 'danger',
+        msg: 'Notificação importante, solicitando atenção'
+      },
+      {
+        type: 'warning',
+        msg: 'Notificação de operação concluída com sucesso'
+      },
+      {
+        type: 'info',
+        msg: 'Notificação de informação exibida, sem importância'
+      },
+      {
+        type: 'info',
+        msg: 'Notificação de informação exibida, sem importância'
+      },
+      {
+        type: 'danger',
+        msg: 'Notificação importante, solicitando atenção'
+      },
+      {
+        type: 'warning',
         msg: 'Notificação de operação concluída com sucesso'
       },
       {

@@ -6,8 +6,17 @@
   width: 22vw;
   padding-top: 64px;
   box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.75);
-  transition: ease-in-out 0.2s all;
+  transition: all ease-in-out 0.2s;
   z-index: 2;
+
+  &.app-sidenav__minimized {
+    width: 5.5vw;
+  }
+
+  &.mobileActive {
+    left: 0;
+  }
+
 
   @include device(smartphone) {
     width: 61vw;
@@ -31,7 +40,7 @@
     left: -38vw;
   }
 
-  .sidenav-header {
+  .app-sidenav-header {
     height: 64px;
     padding: 15px 15px 15px 25px;
     display: flex;
@@ -46,6 +55,7 @@
     .application {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       cursor: pointer;
       width: 185px;
 
@@ -57,7 +67,7 @@
       }
     }
 
-    .sidenav-toggle {
+    .app-sidenav-toggle {
       cursor: pointer;
       padding-top: 6px;
 
@@ -80,7 +90,7 @@
   }
 }
 
-.sidenav-container {
+.app-sidenav-container {
   height: 100%;
 
   .user {
@@ -128,7 +138,7 @@
     }
   }
 
-  .sidenav-menu {
+  .app-sidenav-menu {
     min-height: 100vh;
     flex: 1 1 auto;
     padding-top: 40px;
@@ -143,7 +153,7 @@
       padding-top: 0;
     }
 
-    .sidenav-menu_button {
+    .app-sidenav-menu_button {
       width: 100%;
       display: flex;
       align-items: center;
@@ -156,14 +166,6 @@
       }
     }
   }
-}
-
-.sidenav-minimized {
-  width: 5.5vw;
-}
-
-.mobileActive {
-  left: 0;
 }
 
 
@@ -224,4 +226,8 @@
   top: 0;
   overflow-y: auto;
   position: fixed;
+}
+
+.fab {
+  font-size: 32px;
 }

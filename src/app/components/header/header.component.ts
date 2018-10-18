@@ -1,8 +1,9 @@
-import { Component, OnInit, } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 import { UserService } from '../../services/user.service';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
@@ -10,10 +11,12 @@ import { UserService } from '../../services/user.service';
 export class HeaderComponent implements OnInit {
 
   user: any;
+  notificationsCount: number;
 
   notificationCenterOpened  = false;
   sidenavCompacted          = false;
   mobileSidenavOpened       = false;
+  teste: number;
 
   constructor( private userService: UserService )  {}
 
@@ -43,6 +46,10 @@ export class HeaderComponent implements OnInit {
 
   toggleMobileSidenav() {
     this.mobileSidenavOpened = !this.mobileSidenavOpened;
+  }
+
+  onNotificationsCount(count: number) {
+    this.notificationsCount = count;
   }
 
   ngOnInit() {

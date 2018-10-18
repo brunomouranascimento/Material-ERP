@@ -8,11 +8,11 @@ import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
 import { CardComponent } from './card/card.component';
 import { MaterialErpComponent } from './material-erp/material-erp.component';
+import { AlertComponent } from './alert/alert.component';
 
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
-import { AlertModule } from 'ngx-bootstrap';
 import { MaterialModule } from './@angular/material.module';
 import { AppRoutingModule } from '../routes/app.routing.module';
 
@@ -24,7 +24,6 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   imports: [
     CommonModule,
     PerfectScrollbarModule,
-    AlertModule.forRoot(),
     MaterialModule,
     AppRoutingModule
   ],
@@ -39,7 +38,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FooterComponent,
     MainComponent,
     MaterialErpComponent,
-    CardComponent
+    CardComponent,
+    AlertComponent
   ],
   providers: [
     {

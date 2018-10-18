@@ -18,6 +18,10 @@
     width: 100vw;
   }
 
+  &.app-main__maximized {
+    width: 94.5vw;
+  }
+
   .app-main_container {
     margin: 90px 20px 70px 20px;
     display: flex;
@@ -30,6 +34,4 @@
   }
 }
 
-.app-main__maximized {
-  width: 94.5vw;
-}
+

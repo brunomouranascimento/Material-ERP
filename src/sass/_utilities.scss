@@ -27,12 +27,14 @@
 .light-theme .app-notification-center,
 .light-theme .mat-tab-label,
 .light-theme .mat-input-element,
-.light-theme .mat-form-field.mat-focused .mat-form-field-label {
+.light-theme .mat-form-field.mat-focused .mat-form-field-label,
+.light-theme .app-header_wrapper,
+.light-theme .mat-icon-button {
   color: #000000 !important;
 }
 
-.default-theme .app-sidenav .sidenav-header,
-.default-theme .sidenav-container,
+.default-theme .app-sidenav .app-sidenav-header,
+.default-theme .app-sidenav-container,
 .default-theme .mat-menu-item,
 .default-theme .mat-menu-item .mat-icon:not([color]),
 .default-theme .mat-menu-item-submenu-trigger::after,
@@ -51,7 +53,8 @@
 .dark-theme .mat-form-field.mat-focused .mat-form-field-label,
 .default-theme .mat-form-field.mat-focused .mat-form-field-label,
 .default-theme .app-main_title,
-.dark-theme .app-main_title {
+.dark-theme .app-main_title,
+.dark-theme .app-header_wrapper  {
   color: #FFFFFF !important;
 }
 
@@ -61,11 +64,6 @@
 
 .mat-tab-body-content {
   overflow-x: hidden !important;
-}
-
-.fab {
-  font-size: 32px;
-  font-weight: 100;
 }
 
 .default-theme .mat-menu-item,
@@ -129,12 +127,6 @@
     cursor: pointer;
     padding: 0.5rem .45rem;
   }
-}
-
-.alert {
-  font-size: 16px;
-  position: relative;
-  padding: 0.3rem 1rem;
 }
 
 .default-theme .mat-form-field-appearance-outline .mat-form-field-outline,
