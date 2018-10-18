@@ -13,8 +13,8 @@
   }
 
   .notifications_tab-active {
-    background-color: mat-color($background, background);
-    color: mat-color($foreground, text);
+    background-color: mat-color($foreground, text);
+    color: mat-color($primary);
   }
 
   .app-header {
@@ -29,6 +29,33 @@
   .app-card_body {
     background-color: mat-color($background, background);
     color: mat-color($foreground, text);
+  }
+
+  .app-sidenav-header,
+  .app-footer,
+  .app-sidenav-container,
+  .mat-menu-item,
+  .mat-menu-item .mat-icon:not([color]),
+  .mat-menu-item-submenu-trigger::after,
+  .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick,
+  .mat-form-field-appearance-outline .mat-form-field-outline-thick,
+  .mat-form-field-appearance-outline.mat-focused .mat-form-field-prefix,
+  .mat-form-field-appearance-outline.mat-focused .mat-form-field-suffix,
+  .mat-nav-list .mat-list-item,
+  .mat-input-element,
+  .mat-form-field.mat-focused .mat-form-field-label,
+  .app-main_title,
+  .app-header_wrapper,
+  .mat-icon-button {
+    color: mat-color($foreground, text);
+  }
+
+  .mat-slide-toggle.mat-warn.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: mat-color($foreground, text);
+  }
+
+  .mat-slide-toggle.mat-warn.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: rgba(198,198,198, 0.5);
   }
 
   .app-sidenav,
@@ -55,11 +82,13 @@
   .app-notification-center_header,
   .notifications-content {
     background-color: darken(mat-color($primary), 5%);
+    color: mat-color($foreground, text);
   }
 
   .app-card_header {
     background-color: mat-color($primary);
     border-bottom: solid 3px mat-color($accent);
+    color: mat-color($foreground, text);
   }
 
   .router-link-active {
@@ -78,7 +107,7 @@
   }
 
   a:not(.mat-button):not(.mat-raised-button):not(.mat-fab):not(.mat-mini-fab):not([mat-list-item]) {
-    color: mat-color($background, background);
+    color: mat-color($foreground, text);
     font-weight: bold;
   }
 }
@@ -87,7 +116,7 @@ $default-primary: mat-palette($mat-deep-purple, 600);
 $default-accent: mat-palette($mat-orange, 600);
 $default-warn: mat-palette($mat-red, 600);
 $default-foreground: mat-palette($mat-deep-purple, 900);
-$default-theme: mat-light-theme($default-primary, $default-accent, $default-warn);
+$default-theme: mat-dark-theme($default-primary, $default-accent, $default-warn);
 
 $dark-primary: mat-palette($mat-gray, 700);
 $dark-accent: mat-palette($mat-blue, A200, A100, A400);
