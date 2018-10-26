@@ -64,5 +64,6 @@ export class AppComponent implements OnInit {
     this.userService.getUsers().subscribe(users => {
       this.logedUser = users;
     });
+    console.log(this.isLoged);
   }
 }

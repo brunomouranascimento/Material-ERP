@@ -22,12 +22,12 @@
             <mat-icon class="mat-18">lock</mat-icon>
           </span>
         </mat-form-field>
-        <button mat-raised-button color="primary" (click)="loginApp(true)">Login</button>
+        <button mat-raised-button color="primary" (click)="loginApp(true)" disabled>Login</button>
         <div class="app-login_socials">
-          <button mat-raised-button matTooltip="Login com Google">
+          <button mat-raised-button matTooltip="Login com Google" (click)="tryGoogleLogin()">
             <span><i class="fab fa-google"></i></span>
           </button>
-          <button mat-raised-button matTooltip="Login com Facebook">
+          <button mat-raised-button matTooltip="Login com Facebook" (click)="tryFacebookLogin()">
             <span><i class="fab fa-facebook"></i></span>
           </button>
         </div>

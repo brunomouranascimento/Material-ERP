@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { APIService } from './api.service';
+import { FirebaseService } from './firebase.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +13,9 @@ export class ApplicationService {
     };
   }
 
-  constructor(private api: APIService) { }
+  constructor(private firebaseService: FirebaseService) { }
 
   getMenus() {
-    return this.api.getMenus();
+    return this.firebaseService.getMenus();
   }
 }

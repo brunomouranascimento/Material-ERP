@@ -3,14 +3,14 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/fire
 
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Menu } from './../models/menu';
-import { Notification } from './../models/notification';
-import { User } from './../models/user';
+import { Menu } from '../models/menu';
+import { Notification } from '../models/notification';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
 })
-export class APIService {
+export class FirebaseService {
 
   menusCollection: AngularFirestoreCollection<Menu>;
   notificationsCollection: AngularFirestoreCollection<Notification>;

@@ -4,6 +4,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import 'hammerjs';
 import { environment } from '../environments/environment';
@@ -17,7 +18,8 @@ import { ApplicationService } from './services/application.service';
 import { UserService } from './services/user.service';
 import { DaytimeService } from './services/daytime.service';
 import { NotificationService } from './services/notification.service';
-import { APIService } from './services/api.service';
+import { FirebaseService } from './services/firebase.service';
+import { AuthenticationService } from './services/authentication.service';
 
 
 @NgModule({
@@ -30,6 +32,7 @@ import { APIService } from './services/api.service';
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase, 'material-erp'),
     AngularFirestoreModule,
+    AngularFireAuthModule,
     ComponentsModule,
     PagesModule,
     AppRoutingModule
@@ -39,7 +42,8 @@ import { APIService } from './services/api.service';
     UserService,
     DaytimeService,
     NotificationService,
-    APIService
+    FirebaseService,
+    AuthenticationService
   ],
   bootstrap: [AppComponent]
 })
