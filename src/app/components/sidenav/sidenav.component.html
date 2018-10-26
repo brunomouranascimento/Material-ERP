@@ -1,18 +1,19 @@
 <div class="app-sidenav" [ngClass]="{'app-sidenav__minimized': isMinimized, mobileActive: isMobileActive}">
   <div class="app-sidenav-header">
     <div class="application">
-      <span class="application_icon" *ngIf="isMinimized" (click)="compactSidenav(false)"><i class="fab fa-angular"></i></span>
+      <span class="application_icon" *ngIf="isMinimized" (click)="compactSidenav(false)" matTooltip="Expandir menu"><i
+          class="fab fa-angular"></i></span>
       <span class="application_icon" [routerLink]="['../../pages/home']" *ngIf="!isMinimized"><i class="fab fa-angular"></i></span>
       <span [routerLink]="['../../pages/home']" [ngClass]="{'fade-out': isMinimized, 'fade-in': !isMinimized}">{{
         application.name }}</span>
     </div>
     <div class="app-sidenav-toggle" [ngClass]="{'fade-out': isMinimized, 'fade-in': !isMinimized}" (click)="compactSidenav(true)">
-      <mat-icon class="mat-18">keyboard_arrow_left</mat-icon>
+      <mat-icon class="mat-18" matTooltip="Compactar menu">keyboard_arrow_left</mat-icon>
     </div>
   </div>
   <perfect-scrollbar>
     <div class="app-sidenav-container">
-      <div [ngClass]="{'fade-out': isMinimized, 'fade-in': !isMinimized}" class="user">
+      <div *ngFor="let user of logedUser" [ngClass]="{'fade-out': isMinimized, 'fade-in': !isMinimized}" class="user">
         <span class="name">{{ user.name }}</span>
         <span class="occupation">{{ user.occupation }}</span>
         <span class="email">{{ user.email }}</span>
@@ -20,21 +21,79 @@
           <img class="avatar" src="{{ user.avatar }}" alt="avatar">
         </div>
       </div>
-      <div class="app-sidenav-menu">
-        <div *ngIf="isMobileActive">
-          <a *ngFor="let menu of menus" mat-button class="app-sidenav-menu_button" [routerLink]="[menu.routerLink]"
-            routerLinkActive="router-link-active" [ngClass]="{'app-sidenav-menu_button-minimized': isMinimized}" (click)="closeMobileSidenav()">
-            <mat-icon class="mat-18">{{ menu.icon }}</mat-icon>
-            <span class="menu-name" [ngClass]="{'fade-out': isMinimized, 'fade-in': !isMinimized}">{{ menu.label }}</span>
-          </a>
-        </div>
+      <div class="app-sidenav-menu" [ngClass]="{'sidenav-compacted': isMinimized}">
         <div *ngIf="!isMobileActive">
-          <a *ngFor="let menu of menus" mat-button class="app-sidenav-menu_button" [routerLink]="[menu.routerLink]"
-            routerLinkActive="router-link-active" [ngClass]="{'app-sidenav-menu_button-minimized': isMinimized}">
-            <mat-icon class="mat-18">{{ menu.icon }}</mat-icon>
-            <span class="menu-name" [ngClass]="{'fade-out': isMinimized, 'fade-in': !isMinimized}">{{ menu.label }}</span>
-          </a>
-          <mat-divider mat-divider-horizontal role="separator" aria-orientation="horizontal"></mat-divider>
+          <div *ngFor="let menu of menus" class="menu-section" [ngClass]="{'sidenav-compacted': isMinimized}">
+            <span *ngIf="!isMinimized" class="label-section">{{ menu.label }}</span>
+            <div *ngFor="let children of menu.children">
+              <a *ngIf="!children.routerLink && !isMinimized" mat-button class="app-sidenav-menu_button" (click)="children.expanded = !children.expanded">
+                <mat-icon class="mat-18">{{ children.icon }}</mat-icon>
+                <span class="menu-name" [ngClass]="{'fade-out': isMinimized, 'fade-in': !isMinimized}">{{
+                  children.label }}</span>
+                <mat-icon *ngIf="children.expanded === false && !isMinimized" class="mat-18" style="position: absolute;right: 20px;top: 10px;">keyboard_arrow_down</mat-icon>
+                <mat-icon *ngIf="children.expanded === true && !isMinimized" class="mat-18" style="position: absolute;right: 20px;top: 10px;">keyboard_arrow_up</mat-icon>
+              </a>
+              <a *ngIf="!children.routerLink && isMinimized" mat-button class="app-sidenav-menu_button" matTooltip="{{ children.label }}"
+                (click)="children.expanded = true ; compactSidenav(false)">
+                <mat-icon class="mat-18">{{ children.icon }}</mat-icon>
+                <span class="menu-name" [ngClass]="{'fade-out': isMinimized, 'fade-in': !isMinimized}">{{
+                  children.label }}</span>
+                <mat-icon *ngIf="children.expanded === false && !isMinimized" class="mat-18" style="position: absolute;right: 20px;top: 10px;">keyboard_arrow_down</mat-icon>
+                <mat-icon *ngIf="children.expanded === true && !isMinimized" class="mat-18" style="position: absolute;right: 20px;top: 10px;">keyboard_arrow_up</mat-icon>
+              </a>
+              <a *ngIf="children.routerLink && isMinimized" mat-button class="app-sidenav-menu_button" matTooltip="{{ children.label }}"
+                [routerLink]="[children?.routerLink]" routerLinkActive="router-link-active" (click)="children.expanded = !children.expanded">
+                <mat-icon class="mat-18">{{ children.icon }}</mat-icon>
+                <span class="menu-name" [ngClass]="{'fade-out': isMinimized, 'fade-in': !isMinimized}">{{
+                  children.label }}</span>
+              </a>
+              <a *ngIf="children.routerLink && !isMinimized" mat-button class="app-sidenav-menu_button" [routerLink]="[children?.routerLink]"
+                routerLinkActive="router-link-active" (click)="children.expanded = !children.expanded">
+                <mat-icon class="mat-18">{{ children.icon }}</mat-icon>
+                <span class="menu-name" [ngClass]="{'fade-out': isMinimized, 'fade-in': !isMinimized}">{{
+                  children.label }}</span>
+              </a>
+              <div class="menu-children" *ngIf="children.expanded === true && !isMinimized">
+                <a *ngFor="let children of children.children" mat-button class="app-sidenav-menu_button" [routerLink]="[children?.routerLink]"
+                  routerLinkActive="router-link-active" [ngClass]="{'menu-children': children.expanded === true}">
+                  <span class="menu-name" [ngClass]="{'fade-out': isMinimized, 'fade-in': !isMinimized}" style="
+                  padding-left: 40px;">{{
+                    children.label }}</span>
+                </a>
+              </div>
+            </div>
+            <mat-divider mat-divider-horizontal role="separator"></mat-divider>
+          </div>
+        </div>
+        <div *ngIf="isMobileActive">
+          <div *ngFor="let menu of menus" class="menu-section" [ngClass]="{'sidenav-compacted': isMinimized}">
+            <span class="label-section">{{ menu.label }}</span>
+            <div *ngFor="let children of menu.children">
+              <a *ngIf="!children.routerLink" mat-button class="app-sidenav-menu_button" (click)="children.expanded = !children.expanded">
+                <mat-icon class="mat-18">{{ children.icon }}</mat-icon>
+                <span class="menu-name" [ngClass]="{'fade-out': isMinimized, 'fade-in': !isMinimized}">{{
+                  children.label }}</span>
+                <mat-icon *ngIf="children.expanded === false && !isMinimized" class="mat-18" style="position: absolute;right: 20px;top: 10px;">keyboard_arrow_down</mat-icon>
+                <mat-icon *ngIf="children.expanded === true && !isMinimized" class="mat-18" style="position: absolute;right: 20px;top: 10px;">keyboard_arrow_up</mat-icon>
+              </a>
+              <a *ngIf="children.routerLink" mat-button class="app-sidenav-menu_button" [routerLink]="[children?.routerLink]"
+                routerLinkActive="router-link-active" (click)="closeMobileSidenav()">
+                <mat-icon class="mat-18">{{ children.icon }}</mat-icon>
+                <span class="menu-name" [ngClass]="{'fade-out': isMinimized, 'fade-in': !isMinimized}">{{
+                  children.label }}</span>
+              </a>
+              <div class="menu-children" *ngIf="children.expanded === true">
+                <a *ngFor="let children of children.children" mat-button class="app-sidenav-menu_button" [routerLink]="[children?.routerLink]"
+                  routerLinkActive="router-link-active" [ngClass]="{'menu-children': children.expanded === true}"
+                  (click)="closeMobileSidenav()">
+                  <span class="menu-name" [ngClass]="{'fade-out': isMinimized, 'fade-in': !isMinimized}" style="
+                  padding-left: 40px;">{{
+                    children.label }}</span>
+                </a>
+              </div>
+            </div>
+            <mat-divider mat-divider-horizontal role="separator"></mat-divider>
+          </div>
         </div>
       </div>
     </div>

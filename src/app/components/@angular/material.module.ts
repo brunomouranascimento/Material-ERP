@@ -1,42 +1,35 @@
 import { NgModule } from '@angular/core';
 
-import {
-  MatTooltipModule,
-  MatButtonModule,
-  MatIconModule,
-  MatListModule,
-  MatMenuModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatTabsModule,
-  MatBadgeModule,
-  MatSlideToggleModule
-} from '@angular/material';
+import * as Material from '@angular/material';
 
 @NgModule({
   imports: [
-    MatTooltipModule,
-    MatButtonModule,
-    MatIconModule,
-    MatListModule,
-    MatMenuModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatTabsModule,
-    MatBadgeModule,
-    MatSlideToggleModule
+    Material.MatTooltipModule,
+    Material.MatButtonModule,
+    Material.MatIconModule,
+    Material.MatListModule,
+    Material.MatMenuModule,
+    Material.MatFormFieldModule,
+    Material.MatInputModule,
+    Material.MatTabsModule,
+    Material.MatBadgeModule,
+    Material.MatSlideToggleModule,
+    Material.MatCardModule,
+    Material.MatProgressSpinnerModule
   ],
   exports: [
-    MatTooltipModule,
-    MatButtonModule,
-    MatIconModule,
-    MatListModule,
-    MatMenuModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatTabsModule,
-    MatBadgeModule,
-    MatSlideToggleModule
+    Material.MatTooltipModule,
+    Material.MatButtonModule,
+    Material.MatIconModule,
+    Material.MatListModule,
+    Material.MatMenuModule,
+    Material.MatFormFieldModule,
+    Material.MatInputModule,
+    Material.MatTabsModule,
+    Material.MatBadgeModule,
+    Material.MatSlideToggleModule,
+    Material.MatCardModule,
+    Material.MatProgressSpinnerModule
   ],
   declarations: []
 })

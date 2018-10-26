@@ -1,6 +1,6 @@
 <div role="alert" class="app-alert" [ngClass]="{'app-alert_success': type === 'success', 'app-alert_danger': type === 'danger', 'app-alert_info': type === 'info', 'app-alert_warning': type === 'warning' }">
   <ng-content></ng-content>
-  <button matTooltip="Fechar notificação" aria-label="Close" class="app-alert_close" type="button">
+  <button matTooltip="Fechar notificação" class="app-alert_close" type="button">
     <mat-icon>close</mat-icon>
   </button>
 </div>

@@ -1,7 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { ApplicationService } from '../../services/application.service';
-import { UserService } from 'src/app/services/user.service';
+import { User } from '../../models/user';
+import { Menu } from 'src/app/models/menu';
 
 @Component({
   selector: 'app-sidenav',
@@ -11,15 +12,16 @@ import { UserService } from 'src/app/services/user.service';
 export class SidenavComponent implements OnInit {
 
   @Input() isMobileActive: boolean;
+  @Input() logedUser: User[];
   @Output() isCompacted = new EventEmitter<boolean>();
   @Output() close = new EventEmitter<boolean>();
 
   isMinimized = false;
-  application: any;
-  menus: any;
-  user: any;
 
-  constructor(private applicationService: ApplicationService, private userService: UserService) {}
+  application: any;
+  menus: Menu[];
+
+  constructor(private applicationService: ApplicationService) { }
 
   compactSidenav(compact: boolean) {
     this.isMinimized = !this.isMinimized;
@@ -33,8 +35,8 @@ export class SidenavComponent implements OnInit {
 
   ngOnInit() {
     this.application = this.applicationService.getApplicationSettings();
-    this.menus = this.applicationService.getApplicationMenus();
-    this.user = this.userService.getUser();
+    this.applicationService.getMenus().subscribe(menus => {
+      this.menus = menus;
+    });
   }
-
 }

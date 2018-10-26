@@ -1,0 +1,37 @@
+<perfect-scrollbar>
+  <div class="app-login">
+    <div class="app-login_wrapper">
+      <div class="app-login_header">
+        <span class="application_icon">
+          <i class="fab fa-angular"></i>
+        </span>
+        <span class="application_name">Material ERP</span>
+      </div>
+      <div class="app-login_form">
+        <mat-form-field appearance="outline">
+          <mat-label>Usuário</mat-label>
+          <input matInput>
+          <span matSuffix>
+            <mat-icon class="mat-18">account_box</mat-icon>
+          </span>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Senha</mat-label>
+          <input matInput>
+          <span matSuffix>
+            <mat-icon class="mat-18">lock</mat-icon>
+          </span>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="loginApp(true)">Login</button>
+        <div class="app-login_socials">
+          <button mat-raised-button matTooltip="Login com Google">
+            <span><i class="fab fa-google"></i></span>
+          </button>
+          <button mat-raised-button matTooltip="Login com Facebook">
+            <span><i class="fab fa-facebook"></i></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</perfect-scrollbar>

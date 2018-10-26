@@ -11,6 +11,7 @@
   perspective: 1000px;
   transform-style: preserve-3d;
   transition: 0.5s;
+  border-radius: 3px;
 
   &.small {
     height: 216px;
@@ -62,6 +63,8 @@
       display: flex;
       justify-content: space-between;
       font-weight: bold;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
 
       .app-card_header-toggle {
         cursor: pointer;
@@ -74,6 +77,8 @@
 
     .app-card_body {
       padding: 15px;
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
     }
   }
 }

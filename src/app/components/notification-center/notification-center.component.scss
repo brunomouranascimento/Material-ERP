@@ -77,22 +77,6 @@
           margin-right: 3px;
           font-size: 20px;
         }
-
-        .notifications_icon {
-
-          @include device(smartphone) {
-            display: none;
-          }
-        }
-
-        .notifications_icon-mobile {
-          display: none;
-
-          @include device(smartphone) {
-            display: block;
-          }
-        }
-
         .today_label, .notifications_label {
 
           @include device(smartphone) {
@@ -173,52 +157,12 @@
   }
 }
 
-.app-notification-center_wrapper {
-  list-style: none;
-  white-space: normal;
-  height: 100%;
-
-  .tab-icon {
-    margin-right: 8px;
-  }
-
-  .tab-name {
-
-    @include device(smartphone) {
-      display: none;
-    }
-
-    @include device(smartphone-landscape) {
-      display: none;
-    }
-
-    @include device(big-smartphone-landscape) {
-      display: none;
-    }
-  }
-}
-
-.notifications-control {
-  padding-bottom: 15px;
-}
-
-.notifications-list {
-  position: relative;
-}
-
-.notifications-controls_down {
-  display: flex;
-  justify-content: space-around;
-}
-
 .notifications-nope {
   text-align: center;
 }
 
 
-
-
-.notification-overlay {
+.notification-center_overlay {
   height: 100vh;
   width: 100vw;
   z-index: 4;
@@ -227,15 +171,16 @@
   visibility: hidden;
   background-color: rgba(0, 0, 0, 0.6);
   transition: opacity 0.5s, visibility 0s 0.5s;
-}
 
-.active {
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.5s;
-  height: 100%;
-  left: 0;
-  top: 0;
-  overflow-y: auto;
-  position: fixed;
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    position: fixed;
+  }
+
 }

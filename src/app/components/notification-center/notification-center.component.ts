@@ -1,7 +1,8 @@
-import { Component, OnInit, Input, Output, DoCheck, EventEmitter, } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, DoCheck, IterableDiffers, } from '@angular/core';
 
 import { DaytimeService } from '../../services/daytime.service';
-import { AlertService } from '../../services/alert.service';
+import { NotificationService } from '../../services/notification.service';
+import { Notification } from './../../models/notification';
 
 @Component({
   selector: 'app-notification-center',
@@ -12,18 +13,24 @@ export class NotificationCenterComponent implements OnInit, DoCheck {
 
   @Input() isActive: boolean;
   @Output() close = new EventEmitter<boolean>();
-  @Output() notifications = new EventEmitter<number>();
+  @Output() notification$ = new EventEmitter<number>();
 
-  notificationsCount: any;
+  notificationsCount: number;
   defaultAlerts: any[];
-  alerts: any[];
+  alerts: any[] = [];
+  notifications: Notification[];
   now: string;
 
   todayTabActive = true;
   notificationsTabActive = false;
+  iterableDiffer: any;
 
-  constructor(private daytimeService: DaytimeService, private alertService: AlertService) {
-  }
+  constructor(
+    private daytimeService: DaytimeService,
+    private notificationService: NotificationService,
+    private _iterableDiffers: IterableDiffers) {
+      this.iterableDiffer = this._iterableDiffers.find([]).create(null);
+    }
 
   toggleTodayTab() {
     this.todayTabActive = true;
@@ -40,27 +47,32 @@ export class NotificationCenterComponent implements OnInit, DoCheck {
   }
 
   resetNotifications(): void {
-    this.alerts = this.defaultAlerts;
+    this.notifications = this.defaultAlerts;
   }
 
   clearNotifications() {
-    this.alerts = [];
+    this.notifications = [];
   }
 
   dismissNotification(notification) {
-    this.alerts.splice(this.alerts.indexOf(notification), 1);
+    this.notifications.splice(this.notifications.indexOf(notification), 1);
   }
 
   ngOnInit() {
     this.now = this.daytimeService.getDaytTime();
-    this.defaultAlerts = this.alertService.getAlerts();
-    this.alerts = this.alertService.getAlerts();
-    this.notificationsCount = this.alerts.length;
+    this.notificationService.getNotifications().subscribe(notifications => {
+      this.notifications = notifications;
+      this.defaultAlerts = this.notifications;
+      this.notificationsCount = this.notifications.length;
+      this.notification$.emit(this.notificationsCount);
+    });
   }
 
   ngDoCheck() {
-    this.notificationsCount = this.alerts.length;
-    this.notifications.emit(this.notificationsCount);
+    const changes = this.iterableDiffer.diff(this.notifications);
+    if (changes) {
+      this.notificationsCount = this.notifications.length;
+      this.notification$.emit(this.notificationsCount);
+    }
   }
-
 }

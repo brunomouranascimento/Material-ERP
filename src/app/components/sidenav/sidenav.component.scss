@@ -141,9 +141,9 @@
   .app-sidenav-menu {
     min-height: 100vh;
     flex: 1 1 auto;
-    padding-top: 40px;
-    padding-bottom: 90px;
+    padding: 25px 0 90px 0;
     box-shadow: 0px -3px 6px -2px rgba(0,0,0,0.75);
+    transition: all ease-in-out 0.2s;
 
     @include device(smartphone) {
       padding-top: 0;
@@ -153,17 +153,46 @@
       padding-top: 0;
     }
 
+    &.sidenav-compacted {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .menu-section {
+      padding-bottom: 15px;
+      transition: all ease-in-out 0.2s;
+
+      &.sidenav-compacted {
+        padding-bottom: 0;
+      }
+
+      .label-section {
+        margin-bottom: 15px;
+        padding-left: 25px;
+        opacity: 0.5;
+      }
+    }
+
     .app-sidenav-menu_button {
       width: 100%;
       display: flex;
       align-items: center;
       height: 48px;
-      padding: 0 25px;
+      padding-left: 25px;;
       font-weight: 100;
+
+      .mat-button-wrapper{
+        width: 100%;
+        padding-left: 25px;
+      }
 
       .menu-name {
         padding-left: 15px;
       }
+    }
+    hr {
+      margin: 0;
+      opacity: 0.5;
     }
   }
 }

@@ -31,6 +31,7 @@
               "src/sass/themes.scss"
             ],
             "scripts": [
+              "src/assets/js/pace-fix.js",
               "src/assets/js/pace.min.js"
             ]
           },

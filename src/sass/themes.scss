@@ -49,6 +49,7 @@
   .mat-icon-button,
   .mat-raised-button.mat-accent {
     color: mat-color($foreground, text);
+    caret-color: mat-color($foreground, text);
   }
 
   .mat-slide-toggle.mat-warn.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
@@ -82,14 +83,15 @@
   .ps,
   .today-content,
   .app-notification-center_header,
-  .notifications-content {
+  .notifications-content,
+  .menu-children {
     background-color: darken(mat-color($primary), 5%);
     color: mat-color($foreground, text);
   }
 
   .app-card_header {
     background-color: mat-color($primary);
-    border-bottom: solid 3px mat-color($accent);
+    border-bottom: solid 1px mat-color($accent);
     color: mat-color($foreground, text);
   }
 
@@ -100,7 +102,7 @@
   }
 
   .router-link-active.app-sidenav-menu_button-minimized {
-    border-right: solid 18px mat-color($accent);
+    border-right: solid 5px mat-color($accent);
   }
 
   .footer_created-by {
@@ -108,7 +110,7 @@
     font-weight: 100;
   }
 
-  a:not(.mat-button):not(.mat-raised-button):not(.mat-fab):not(.mat-mini-fab):not([mat-list-item]) {
+  a:not(.mat-button):not(.mat-raised-button):not(.mat-fab):not(.mat-mini-fab):not([mat-list-item]), caret-color {
     color: mat-color($foreground, text);
     font-weight: bold;
   }
